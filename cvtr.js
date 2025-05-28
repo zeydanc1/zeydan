@@ -1,5 +1,5 @@
 function downloadPDF() {
-    const pdfPath = 'ZeydanCV.pdf'; 
+    const pdfPath = 'zeydanCV_TR.pdf'; 
     const link = document.createElement('a');
     link.href = pdfPath;
     link.download = 'zeydanCV_TR.pdf';
