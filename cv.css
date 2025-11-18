@@ -1,0 +1,83 @@
+#cv {
+  background: linear-gradient(145deg, #2d3748, #4a5568);
+  max-width: 760px;
+  margin: 3rem auto;
+  padding: 2.5rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #cbd5e0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease-in-out;
+}
+
+#cv h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #ffcc00;
+  text-align: center;
+  margin-bottom: 1.8rem;
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.6);
+}
+
+#cv p {
+  font-size: 1.1rem;
+  color: #e2e8f0;
+  text-align: center;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+#cv button {
+  display: block;
+  margin: 0 auto;
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #1a1a1a;
+  background-color: #ffcc00;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+#cv button:hover {
+  background-color: #ffd93b;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #cv {
+    padding: 2rem 1.6rem;
+    margin: 2rem 1.5rem;
+    border-radius: 18px;
+  }
+
+  #cv h2 {
+    font-size: 2rem;
+  }
+
+  #cv p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #cv {
+    padding: 1.5rem 1rem;
+    margin: 1.5rem 1rem;
+    border-radius: 15px;
+  }
+
+  #cv h2 {
+    font-size: 1.8rem;
+  }
+
+  #cv p {
+    font-size: 0.95rem;
+  }
+}
