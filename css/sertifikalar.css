@@ -1,0 +1,91 @@
+/* Genel yapı */
+#sertifikalar {
+  padding: 2rem 1rem;
+  background: linear-gradient(135deg, #1e293b, #334155);
+  color: #f1f5f9;
+  font-family: "Segoe UI", sans-serif;
+  max-width: 1200px;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+/* Başlık */
+#sertifikalar h2 {
+  font-size: 2.3rem;
+  text-align: center;
+  color: #facc15;
+  margin-bottom: 2.5rem;
+  font-weight: 800;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Sertifika Kartı */
+.sertifika-karti {
+  background-color: #475569;
+  border-radius: 1rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sertifika-karti:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* Metin kısmı */
+.sertifika-karti .metin h3 {
+  color: #facc15;
+  font-size: 1.4rem;
+  margin-bottom: 0.6rem;
+}
+
+.sertifika-karti .metin p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #e2e8f0;
+  margin-bottom: 0.7rem;
+}
+
+/* Görsel kısmı */
+.sertifika-karti .gorsel img {
+  width: 100%;
+  height: auto;
+  border: 2px solid #cbd5e1;
+  border-radius: 8px;
+}
+
+/* Responsive Ayarlar */
+@media (min-width: 768px) {
+  .sertifika-karti {
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .sertifika-karti .metin {
+    flex: 1;
+  }
+
+  .sertifika-karti .gorsel {
+    flex: 1;
+  }
+
+  .sertifika-karti .gorsel img {
+    max-width: 100%;
+    max-height: 300px;
+    object-fit: contain;
+  }
+
+  #sertifikalar h2 {
+    font-size: 2.6rem;
+  }
+
+  .sertifika-karti .metin h3 {
+    font-size: 1.6rem;
+  }
+}

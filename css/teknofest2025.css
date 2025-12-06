@@ -1,0 +1,153 @@
+/*TEKNOFEST 2025 – GALERİ BÖLÜMÜ*/
+
+#teknofest2025 {
+  background: linear-gradient(135deg, #1a202c, #2d3748);
+  max-width: 950px;
+  margin: 3rem auto;
+  padding: 2.5rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45),
+              inset 0 1px 4px rgba(255, 255, 255, 0.08);
+  color: #e2e8f0;
+  border: 3px solid #ffcc00;
+  transition: 0.35s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#teknofest2025:hover {
+  background: linear-gradient(135deg, #232d3b, #3a475b);
+  box-shadow: 0 22px 45px rgba(0, 0, 0, 0.55),
+              inset 0 1px 4px rgba(255, 255, 255, 0.12);
+}
+
+#teknofest2025 h2 {
+  text-align: center;
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: #ffcc00;
+  margin-bottom: 2rem;
+  text-shadow: 0 3px 10px rgba(0,0,0,0.55);
+  letter-spacing: 0.03em;
+}
+
+/*GALERİ*/
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 20px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 14px;
+  cursor: pointer;
+  border: 2px solid rgba(255, 204, 0, 0.25);
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.45);
+  transition: 0.35s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  border-color: #ffcc00;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.55);
+  opacity: 0.95;
+}
+
+/* MODAL*/
+
+.modal {
+  display: none; /* gizli başlangıç */
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  z-index: 2000;
+  backdrop-filter: blur(3px);
+}
+
+/* Modal açılınca fleks ile ortalasın */
+.modal.show {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Fotoğraf boyutu (biraz küçültülmüş versiyon) */
+.modal img {
+  max-width: 80vw; 
+  max-height: 60vh;
+  border-radius: 12px;
+  object-fit: contain;
+  transition: transform 0.25s ease;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+/* Kapatma butonu */
+
+.close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 45px;
+  font-weight: bold;
+  color: #ffcc00;
+  cursor: pointer;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.75);
+  transition: 0.3s;
+}
+
+.close:hover {
+  color: #ffdd33;
+  transform: scale(1.15);
+}
+
+/* =======================================
+           OK TUŞLARI
+   ======================================= */
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 60px;
+  padding: 12px;
+  color: #ffcc00;
+  cursor: pointer;
+  transition: 0.3s;
+  user-select: none;
+  text-shadow: 0 5px 15px rgba(0, 0, 0, 0.75);
+}
+
+.arrow:hover {
+  color: #ffdd33;
+  transform: translateY(-50%) scale(1.25);
+}
+
+.arrow.left { left: 20px; }
+.arrow.right { right: 20px; }
+
+/* =======================================
+         RESPONSIVE TASARIM
+   ======================================= */
+
+@media (max-width: 768px) {
+  .modal-content {
+    max-width: 92%;
+  }
+  .arrow {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 480px) {
+  #teknofest2025 {
+    padding: 1.5rem 1rem;
+  }
+  .arrow {
+    font-size: 38px;
+  }
+  .close {
+    font-size: 36px;
+    right: 20px;
+  }
+}

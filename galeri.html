@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <!-- Temel Meta Ayarları -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
+  <!-- Başlık ve Açıklama -->
+  <title>Zeydan Çalışkan | Kişisel Akademik Sayfa</title>
+  <meta name="description" content="Zeydan Çalışkan'ın akademik çalışmaları, projeleri, yayınları ve iletişim bilgilerine ulaşabileceğiniz kişisel akademik web sayfası." />
+  <meta name="keywords" content="Zeydan Çalışkan, akademik profil, mühendislik, projeler, yayınlar, yapay zeka, duygusal zeka, insan-robot etkileşimi, yazılım mühendisi, araştırma" />
+  <meta name="author" content="Zeydan Çalışkan" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://zeydanc1.github.io/zeydan/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Zeydan Çalışkan | Kişisel Akademik Sayfa" />
+  <meta property="og:description" content="Akademik çalışmalarım, projelerim ve yayınlarım hakkında bilgi almak için ziyaret edin." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://zeydanc1.github.io/zeydan/" />
+  <meta property="og:image" content="https://zeydanc1.github.io/zeydan/profil/zeydan.jpg" />
+  <meta property="og:site_name" content="Zeydan Çalışkan" />
+  <meta property="og:locale" content="tr_TR" />
+
+  <!-- Twitter Kartları -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Zeydan Çalışkan | Kişisel Akademik Sayfa" />
+  <meta name="twitter:description" content="Akademik projelerim ve araştırmalarım hakkında bilgi almak için ziyaret edin." />
+  <meta name="twitter:image" content="https://zeydanc1.github.io/zeydan/profil/zeydan.jpg" />
+  <meta name="twitter:site" content="@Zeydancaliskan" /> 
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/zeydan.jpg" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="https://zeydanc1.github.io/zeydan/profil/zeydan.jpg" />
+
+  <meta name="theme-color" content="#1a202c" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/galeri.css" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+<script src="js/hamburger.js" defer></script>
+ <header>
+  <div class="logo">
+    <h1>Zeydan Çalışkan</h1>
+    <p>Yazılım Mühendisliği Öğrencisi | Duygusal Zeka & Teknoloji | Kültürel Etkileşimler</p>
+  </div>
+
+  <!-- Hamburger butonu -->
+ <button class="hamburger" aria-label="Menu Toggle" aria-expanded="false">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+
+  <nav class="main-menu">
+    <ul>
+      <li><a href="index.html">Anasayfa</a></li>
+      <li><a href="#teknofest2025">Galeri</a></li>
+      <li><a href="#iletisim">İletişim</a></li>
+      <li><a href="#cv">Akademik Özgeçmiş</a></li>
+    </ul>
+  </nav>
+
+  <div class="profile">
+    <img src="images/zeydan.jpg" alt="Profil">
+  </div>
+</header>
+<main>
+
+    <!-- FOTOĞRAF GALERİSİ -->
+<section id="teknofest2025">
+  <h2>Teknofest 2025 – Finalden Kareler</h2>
+
+  <div class="gallery" id="gallery">
+    <img src="images/teknofest2025.jpg" alt="Teknofest Photo 1">
+    <img src="images/teknofest20251.jpeg" alt="Teknofest Photo 2">
+    <img src="images/teknofest20251.1.jpg" alt="Teknofest Photo 3">
+    <img src="images/teknofest202515.jpeg" alt="Teknofest Photo 15">
+    <img src="images/teknofest20253.jpeg" alt="Teknofest Photo 5">
+    
+
+    <img src="images/teknofest20256.jpeg" alt="Teknofest Photo 6">
+    <img src="images/teknofest20257.jpeg" alt="Teknofest Photo 7">
+    <img src="images/teknofest20258.jpeg" alt="Teknofest Photo 8">
+    <img src="images/teknofest202510.jpeg" alt="Teknofest Photo 10">
+    <img src="images/teknofest202512.jpeg" alt="Teknofest Photo 12">
+    
+
+    <img src="images/teknofest202513.jpeg" alt="Teknofest Photo 13">
+    <img src="images/teknofest202511.jpeg" alt="Teknofest Photo 11">
+    <img src="images/teknofest20259.jpeg" alt="Teknofest Photo 9">
+    <img src="images/teknofest202516.jpeg" alt="Teknofest Photo 16">
+    <img src="images/teknofest20252.jpeg" alt="Teknofest Photo 4">
+    
+  </div>
+</section>
+
+<!-- MODAL -->
+<div id="modal" class="modal" hidden>
+  <div class="modal-inner">
+    <span class="close" onclick="closeModal()">&times;</span>
+
+    <span class="arrow left" onclick="changeImage(-1)">&#10094;</span>
+
+    <img class="modal-content" id="modal-img" alt="Modal Image">
+
+    <span class="arrow right" onclick="changeImage(1)">&#10095;</span>
+  </div>
+</div>
+
+
+<!-- Modal JS -->
+<script src="js/modal.js"></script>
+
+
+<!-- CV BÖLÜMÜ -->
+<section id="cv">
+  <h2>Akademik Özgeçmiş</h2>
+  <p>Bilimsel çalışmalarım, eğitim geçmişim ve profesyonel deneyimlerimi içeren akademik özgeçmişime aşağıdaki bağlantıdan ulaşabilir ve PDF formatında indirebilirsiniz.</p>
+  <button onclick="downloadPDF()">Özgeçmişi PDF Olarak İndir</button>
+</section>
+
+<section id="iletisim">
+  <h2>İletişim</h2>
+  <p>Bana aşağıdaki kanallardan ulaşabilirsiniz:</p>
+  <ul>
+    <li><strong>E-posta:</strong> <a href="mailto:caliskanzeydan9@gmail.com">caliskanzeydan9@gmail.com</a></li>
+    <li><strong>Facebook:</strong> <a href="https://www.facebook.com/cls.zeydan" target="_blank" rel="noopener noreferrer">facebook.com/cls.zeydan</a></li>
+    <li><strong>Instagram:</strong> <a href="https://www.instagram.com/zeydancalisk" target="_blank" rel="noopener noreferrer">instagram.com/zeydancalisk</a></li>
+  </ul>
+</section>
+
+</main>
+
+<!-- DİL DEĞİŞTİRME -->
+<div class="language-switcher">
+  <button onclick="translatePage('en')">EN</button>
+  <button onclick="translatePage('tr')">TR</button>
+</div>
+
+<!-- SCRIPT DOSYALARI -->
+<script src="js/modal.js"></script>
+<script src="js/cvtr.js" defer></script>
+<script src="js/galeridil.js"></script>
+<link rel="stylesheet" href="css/dil.css">
+
+<footer>
+  <p>&copy; 2025 Zeydan Çalışkan. Tüm hakları saklıdır.</p>
+</footer>
+
+</body>
+</html>

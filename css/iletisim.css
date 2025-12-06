@@ -1,0 +1,285 @@
+/* Genel veya diğer stilleriniz (buraya dahil edilmemiştir) */
+body {
+  background-color: #1a202c; /* Örnek koyu arka plan */
+  color: #e2e8f0; /* Genel metin rengi */
+  line-height: 1.6;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #ffcc00; /* Başlıklar için altın sarısı renk */
+}
+
+a {
+  color: #ffcc00; /* Linkler için altın sarısı renk */
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ffdd33;
+  text-decoration: underline;
+}
+
+/* #ozet Bölümü */
+#ozet {
+  background: linear-gradient(135deg, #2d3748, #4a5568); /* Koyu gri gradient */
+  padding: 2.5rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
+  max-width: 720px;
+  margin: 3rem auto;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #e2e8f0; /* Açık gri metin rengi */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Hafif beyaz border */
+  transition: all 0.4s ease-in-out;
+}
+
+#ozet:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.5);
+}
+
+#ozet h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #ffcc00; /* Altın sarısı başlık rengi */
+  margin-bottom: 1.5rem;
+  text-align: center; /* Başlığı ortalar */
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.6); /* Başlığa gölge */
+}
+
+#ozet p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  color: #cbd5e0; /* Paragraf için biraz daha koyu gri */
+  text-align: justify; /* Paragrafı iki yana yaslar (isteğe bağlı) */
+}
+
+#ozet p:last-child {
+  margin-bottom: 0;
+}
+
+/* #sertifikalar Bölümü */
+#sertifikalar {
+  background: linear-gradient(135deg, #232d3b, #3a475b); /* Ozet'e daha yakın koyu gri tonlar */
+  padding: 2.5rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
+  max-width: 720px;
+  margin: 3rem auto;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #e2e8f0; /* Ozet ile aynı metin rengi */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Ozet ile aynı border rengi */
+  transition: all 0.4s ease-in-out; /* ozet ile uyumlu */
+}
+
+#sertifikalar:hover { /* ozet'ten eklenen hover */
+  transform: translateY(-7px);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.5);
+}
+
+#sertifikalar h2 {
+  font-size: 2.2rem; /* Ozet başlığı ile uyumlu */
+  font-weight: 700;
+  color: #ffcc00; /* Ozet başlığı ile uyumlu */
+  margin-bottom: 1.5rem;
+  text-align: center; /* Başlığı ortalar */
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.6); /* Ozet başlığı ile uyumlu */
+}
+
+
+#sertifikalar article {
+  background: #2d3748; /* Ozet arka planının bir ton koyusu */
+  border-radius: 16px;
+  padding: 1.6rem 1.6rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.4);
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
+  color: #e2e8f0; /* Ozet ile aynı metin rengi */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Genel border stili */
+}
+
+#sertifikalar article:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); /* article hover efekti ozet hover efektiyle biraz farklı bırakıldı */
+  transform: translateY(-5px); /* article hover hareketi ozet hover hareketinden biraz daha az */
+  background: #3a475b; /* Ozet hover arka planına yakın */
+}
+
+#sertifikalar article h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffcc00; /* Ozet başlık rengi */
+  margin-bottom: 0.7rem;
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.6); /* Ozet başlık text-shadow'u */
+}
+
+#sertifikalar article p {
+  font-size: 1.05rem;
+  margin-bottom: 0.7rem;
+  line-height: 1.7;
+  color: #cbd5e1; /* Ozet paragraf metin rengi */
+}
+
+#sertifikalar article p strong {
+  color: #ffdd33; /* Ozet başlık renginin bir ton açığı */
+}
+
+/* #iletisim Bölümü */
+#iletisim {
+  /* Mevcut stilleriniz */
+  background: linear-gradient(135deg, #232d3b, #3a475b); /* Sertifikalar ile uyumlu */
+  padding: 2.5rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
+  max-width: 720px;
+  margin: 3rem auto;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #e2e8f0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease-in-out;
+  text-align: center; /* Başlık ve paragraf gibi satır içi öğeleri ortalar */
+}
+
+#iletisim:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.5);
+}
+
+#iletisim h2 {
+  font-size: 2.2rem; /* Diğer başlıklarla uyumlu */
+  font-weight: 700;
+  color: #ffcc00; /* Diğer başlıklarla uyumlu */
+  margin-bottom: 1rem;
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.6); /* Diğer başlıklarla uyumlu */
+  /* text-align: center; zaten üst öğeden geliyor */
+}
+
+#iletisim p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem; /* Liste ile arasındaki boşluk */
+  color: #cbd5e0; /* Paragraf metin rengi */
+  /* text-align: center; zaten üst öğeden geliyor */
+}
+
+#iletisim ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto; /* ul öğesini yatayda ortalar */
+  max-width: 600px; /* Liste genişliğini sınırlayarak daha iyi ortalama sağlar */
+  text-align: left; /* Liste öğelerinin içeriğini tekrar sola hizalar (isteğe bağlı) */
+}
+
+#iletisim ul li {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.8rem 1.2rem;
+  background: #2d3748; /* Koyu gri arka plan */
+  border-radius: 16px;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.6), 0 6px 22px rgba(0, 0, 0, 0.4); /* Kabartma ve dış gölge */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#iletisim ul li:hover {
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.7), 0 15px 30px rgba(0, 0, 0, 0.4); /* Hover'da gölgeler artar */
+  transform: translateY(-5px); /* Hafif yükselme */
+  background: #3a475b; /* Hover arka plan rengi */
+}
+
+#iletisim ul li a {
+  color: #ffcc00; /* Altın sarısı link rengi */
+  text-decoration: none;
+  font-weight: 600;
+  word-break: break-word;
+  transition: color 0.3s ease;
+}
+
+#iletisim ul li a:hover,
+#iletisim ul li a:focus {
+  color: #ffdd33; /* Hover'da daha açık altın sarısı */
+  text-decoration: underline;
+  outline: none;
+}
+
+/* Responsive Ayarlar (Örnek) */
+@media (max-width: 768px) {
+  #ozet, #sertifikalar, #iletisim {
+    padding: 2rem 1.5rem;
+    margin: 2rem 1.2rem;
+  }
+
+  #ozet h2, #sertifikalar h2, #iletisim h2 {
+    font-size: 2rem;
+  }
+
+  #ozet p {
+    font-size: 1rem;
+  }
+
+  #sertifikalar article h3 {
+    font-size: 1.25rem;
+  }
+
+  #sertifikalar article p {
+    font-size: 1rem;
+  }
+
+  #iletisim p {
+    font-size: 1.1rem;
+  }
+
+  #iletisim ul {
+      max-width: 90%; /* Daha dar ekranlarda listeyi biraz genişlet */
+  }
+
+  #iletisim ul li {
+    font-size: 0.95rem;
+    padding: 0.7rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #ozet, #sertifikalar, #iletisim {
+    padding: 1.5rem 1rem;
+    margin: 1.5rem 1rem;
+  }
+
+  #ozet h2, #sertifikalar h2, #iletisim h2 {
+    font-size: 1.7rem;
+  }
+
+  #ozet p {
+    font-size: 0.95rem;
+  }
+
+  #sertifikalar article h3 {
+    font-size: 1.1rem;
+  }
+
+  #sertifikalar article p {
+    font-size: 0.95rem;
+  }
+
+  #iletisim p {
+    font-size: 1rem;
+  }
+
+   #iletisim ul {
+      max-width: 100%; /* Çok dar ekranlarda tam genişlik kullan */
+  }
+
+  #iletisim ul li {
+    flex-direction: column; /* Dikey düzen */
+    align-items: flex-start; /* Sola hizala */
+    font-size: 0.9rem;
+    padding: 0.6rem 0.8rem;
+  }
+
+   #iletisim ul li a {
+       margin-top: 0.4rem; /* Link ile diğer içerik arasına boşluk */
+   }
+}

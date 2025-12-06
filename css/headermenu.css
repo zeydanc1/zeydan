@@ -1,0 +1,213 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body stilleri */
+body {
+  padding-top: 100px; /* Desktop için header yüksekliği */
+  font-family: "Roboto", sans-serif;
+  background: #1a1a1a;
+  color: #eee;
+}
+
+/* HEADER YAPISI */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #2b2b2b;
+  color: #eee;
+  padding: 1.2rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #444;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  z-index: 9999;
+}
+
+/* Logo ve Açıklama stilleri - Altın tonları */
+.logo h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffc107;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.logo p {
+  font-size: 1rem;
+  color: #bbb;
+  margin-top: 5px;
+}
+
+/* Menü stilleri */
+.main-menu ul {
+  list-style: none;
+  display: flex;
+  gap: 1.8rem;
+}
+
+.main-menu a {
+  text-decoration: none;
+  color: #eee;
+  font-weight: 500;
+  padding: 8px 0;
+  position: relative;
+  transition: color 0.4s ease;
+}
+
+/* Menü alt çizgi animasyonu */
+.main-menu a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #ffc107;
+  transition: width 0.4s ease;
+}
+
+.main-menu a:hover {
+  color: #ffc107;
+}
+
+.main-menu a:hover::after {
+  width: 100%;
+}
+
+/* Profil Girişi stilleri */
+.profile {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #ffc107;
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+}
+
+.profile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(255, 193, 7, 0.7);
+}
+
+/* Hamburger buton stilleri */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10000;
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #ffc107;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Hamburger aktifken (çarpı yapımı) */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Mobil & Tablet Uyum (768px ve altı) */
+@media (max-width: 768px) {
+  body {
+    padding-top: 80px; /* Daha ince header için azaltıldı */
+  }
+
+  header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    gap: 0;
+    height: 60px; /* Daha ince header */
+  }
+
+  .logo {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .logo h1 {
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+  }
+
+  .logo p {
+    font-size: 0.7rem;
+    line-height: 0.9rem;
+  }
+
+  .profile {
+    width: 30px;
+    height: 30px;
+    border-width: 2px;
+    margin-left: 10px;
+  }
+
+  .hamburger {
+    display: flex;
+    margin-left: auto;
+    margin-right: 10px;
+    padding: 5px;
+  }
+
+  .main-menu {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background: #2b2b2b;
+    border-top: 1px solid #444;
+    position: absolute;
+    top: 60px; /* header’ın hemen altına */
+    left: 0;
+  }
+
+  .main-menu.open {
+    max-height: 400px;
+  }
+
+  .main-menu ul {
+    flex-direction: column;
+    gap: 0.8rem;
+    padding: 1rem;
+  }
+
+  .main-menu a {
+    font-size: 0.95rem;
+    padding: 0.3rem 0;
+  }
+}

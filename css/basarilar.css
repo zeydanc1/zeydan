@@ -1,0 +1,93 @@
+#basarilar {
+  max-width: 800px; /* Genişliği biraz artırdım, başarı listesi daha uzun olabilir */
+  margin: 3rem auto;
+  padding: 2.5rem 2rem;
+  /* İletişim ve Sertifikalar bölümleriyle aynı gradient rengi */
+  background: linear-gradient(135deg, #232d3b, #3a475b);
+  border-radius: 20px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #e2e8f0; /* Açık gri metin rengi */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease-in-out; /* Hover efekti için transition */
+}
+
+#basarilar:hover { /* Diğer ana bölümlerle aynı hover efekti */
+  transform: translateY(-7px);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.5);
+}
+
+#basarilar h2 {
+  font-size: 2.2rem; /* Diğer başlıklarla uyumlu */
+  font-weight: 700;
+  color: #ffcc00; /* Altın sarısı başlık rengi */
+  text-align: center;
+  margin-bottom: 2rem; /* Liste ile başlık arasına boşluk */
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.6); /* Başlığa gölge */
+}
+
+#basarilar ul {
+  list-style-type: disc; /* Madde işaretleri */
+  padding-left: 2rem; /* Madde işaretleri için sola boşluk */
+  color: #e2e8f0; /* Liste işaretçileri için renk (isteğe bağlı, tarayıcıya göre değişebilir) */
+}
+
+#basarilar ul li {
+  margin-bottom: 1.5rem; /* Liste öğeleri arasına boşluk */
+  line-height: 1.7;
+  font-size: 1.15rem;
+  color: #e2e8f0; /* Liste öğesi metin rengi */
+}
+
+#basarilar ul li strong {
+  color: #ffdd33; /* Özet ve Sertifika bölümlerindeki bold metinlerle uyumlu */
+  font-weight: 600;
+}
+
+#basarilar ul li a {
+  margin-left: 0.5rem; /* Link ile metin arasına boşluk */
+  color: #ffcc00; /* Link rengi */
+  text-decoration: none;
+  font-weight: 600;
+  /* Link altına hover'da çıkan bir border ekleyelim */
+  border-bottom: 1.5px solid transparent;
+  transition: border-color 0.25s ease, color 0.25s ease;
+}
+
+#basarilar ul li a:hover,
+#basarilar ul li a:focus {
+  color: #ffdd33; /* Hover'da daha açık altın sarısı */
+  border-bottom: 1.5px solid #ffdd33; /* Hover'da altın sarısı border */
+  outline: none; /* Focus olduğunda varsayılan outline'ı kaldırır */
+}
+
+/* Responsive Ayarlar (Genel responsive bloklarına eklenmeli) */
+@media (max-width: 768px) {
+  #basarilar {
+    padding: 2rem 1.5rem;
+    margin: 2rem 1.2rem;
+  }
+
+  #basarilar h2 {
+    font-size: 2rem;
+  }
+
+  #basarilar ul li {
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #basarilar {
+    padding: 1.5rem 1rem;
+    margin: 1.5rem 1rem;
+  }
+
+  #basarilar h2 {
+    font-size: 1.7rem;
+  }
+
+  #basarilar ul li {
+    font-size: 1rem;
+  }
+}

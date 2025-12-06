@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic Meta Settings -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
+  <!-- Title & Description -->
+  <title>Zeydan Çalışkan | Personal Academic Page</title>
+  <meta name="description" content="The personal academic webpage where you can access the academic works, projects, publications, and contact information of Zeydan Çalışkan." />
+  <meta name="keywords" content="Zeydan Çalışkan, academic profile, engineering, projects, publications, artificial intelligence, emotional intelligence, human-robot interaction, software engineer, research" />
+  <meta name="author" content="Zeydan Çalışkan" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://zeydanc1.github.io/zeydan/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Zeydan Çalışkan | Personal Academic Page" />
+  <meta property="og:description" content="Visit to learn more about my academic works, projects, and publications." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://zeydanc1.github.io/zeydan/" />
+  <meta property="og:image" content="https://zeydanc1.github.io/zeydan/profil/zeydan.jpg" />
+  <meta property="og:site_name" content="Zeydan Çalışkan" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Zeydan Çalışkan | Personal Academic Page" />
+  <meta name="twitter:description" content="Visit to learn more about my academic projects and research." />
+  <meta name="twitter:image" content="https://zeydanc1.github.io/zeydan/profil/zeydan.jpg" />
+  <meta name="twitter:site" content="@Zeydancaliskan" /> 
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/zeydan.jpg" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="https://zeydanc1.github.io/zeydan/profil/zeydan.jpg" />
+
+  <meta name="theme-color" content="#1a202c" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/galeri.css" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+<script src="js/hamburger.js" defer></script>
+
+<header>
+  <div class="logo">
+    <h1>Zeydan Çalışkan</h1>
+    <p>Software Engineering Student | Emotional Intelligence & Technology | Cultural Interactions</p>
+  </div>
+
+  <!-- Hamburger Button -->
+  <button class="hamburger" aria-label="Menu Toggle" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <nav class="main-menu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#teknofest2025">Gallery</a></li>
+      <li><a href="#iletisim">Contact</a></li>
+      <li><a href="#cv">Academic CV</a></li>
+    </ul>
+  </nav>
+
+  <div class="profile">
+    <img src="images/zeydan.jpg" alt="Profile">
+  </div>
+</header>
+
+<main>
+
+<!-- PHOTO GALLERY -->
+<section id="teknofest2025">
+  <h2>Teknofest 2025 – Moments from the Finals</h2>
+
+  <div class="gallery" id="gallery">
+    <img src="images/teknofest2025.jpg" alt="Teknofest Photo 1">
+    <img src="images/teknofest20251.jpeg" alt="Teknofest Photo 2">
+    <img src="images/teknofest20251.1.jpg" alt="Teknofest Photo 3">
+    <img src="images/teknofest202515.jpeg" alt="Teknofest Photo 15">
+    <img src="images/teknofest20253.jpeg" alt="Teknofest Photo 5">
+
+    <img src="images/teknofest20256.jpeg" alt="Teknofest Photo 6">
+    <img src="images/teknofest20257.jpeg" alt="Teknofest Photo 7">
+    <img src="images/teknofest20258.jpeg" alt="Teknofest Photo 8">
+    <img src="images/teknofest202510.jpeg" alt="Teknofest Photo 10">
+    <img src="images/teknofest202512.jpeg" alt="Teknofest Photo 12">
+
+    <img src="images/teknofest202513.jpeg" alt="Teknofest Photo 13">
+    <img src="images/teknofest202511.jpeg" alt="Teknofest Photo 11">
+    <img src="images/teknofest20259.jpeg" alt="Teknofest Photo 9">
+    <img src="images/teknofest202516.jpeg" alt="Teknofest Photo 16">
+    <img src="images/teknofest20252.jpeg" alt="Teknofest Photo 4">
+  </div>
+</section>
+
+<!-- MODAL -->
+<div id="modal" class="modal" hidden>
+  <div class="modal-inner">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <span class="arrow left" onclick="changeImage(-1)">&#10094;</span>
+    <img class="modal-content" id="modal-img" alt="Modal Image">
+    <span class="arrow right" onclick="changeImage(1)">&#10095;</span>
+  </div>
+</div>
+
+<!-- Modal JS -->
+<script src="js/modal.js"></script>
+
+<!-- CV SECTION -->
+<section id="cv">
+  <h2>Academic CV</h2>
+  <p>You can access my academic background, scientific studies, and professional experience below and download my CV in PDF format.</p>
+  <button onclick="downloadPDF()">Download CV as PDF</button>
+</section>
+
+<!-- CONTACT -->
+<section id="iletisim">
+  <h2>Contact</h2>
+  <p>You can reach me through the following channels:</p>
+  <ul>
+    <li><strong>Email:</strong> <a href="mailto:caliskanzeydan9@gmail.com">caliskanzeydan9@gmail.com</a></li>
+    <li><strong>Facebook:</strong> <a href="https://www.facebook.com/cls.zeydan" target="_blank" rel="noopener noreferrer">facebook.com/cls.zeydan</a></li>
+    <li><strong>Instagram:</strong> <a href="https://www.instagram.com/zeydancalisk" target="_blank" rel="noopener noreferrer">instagram.com/zeydancalisk</a></li>
+  </ul>
+</section>
+
+</main>
+
+<!-- LANGUAGE SWITCHER -->
+<div class="language-switcher">
+  <button onclick="translatePage('en')">EN</button>
+  <button onclick="translatePage('tr')">TR</button>
+</div>
+
+<!-- SCRIPTS -->
+<script src="js/modal.js"></script>
+<script src="js/cvtr.js" defer></script>
+<script src="js/galeridil.js"></script>
+<link rel="stylesheet" href="css/dil.css">
+
+<footer>
+  <p>&copy; 2025 Zeydan Çalışkan. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
