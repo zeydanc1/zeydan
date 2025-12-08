@@ -5,3 +5,5 @@ function translatePage(lang) {
     window.location.href = 'indexen.html';
   }
 }
+
+
