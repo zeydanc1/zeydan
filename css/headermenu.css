@@ -23,7 +23,8 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 5%;
+  padding: 0 var(--space-6);
+  /* Reduced padding to move items closer to edges */
 
   z-index: var(--z-fixed);
   transition: all var(--transition-normal);
