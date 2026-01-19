@@ -3,7 +3,7 @@ const menu = document.querySelector('.main-menu');
 
 hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('active');
-  menu.classList.toggle('open');
+  menu.classList.toggle('active');
 
   // Erişilebilirlik için aria-expanded değişimi
   const expanded = hamburger.getAttribute('aria-expanded') === 'true';
