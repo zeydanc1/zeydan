@@ -1,56 +1,96 @@
+/**
+ * Language Switcher - Premium Design
+ * ===================================
+ * Uses design tokens from design-tokens.css
+ */
+
 .language-switcher {
-    position: fixed;
-    top: 120px; 
-    right: 10px;
-    display: flex;
-    gap: 8px;
-    z-index: 9999;
-    padding: 5px;
+  position: fixed;
+  top: 120px;
+  right: var(--space-4);
+
+  display: flex;
+  gap: var(--space-2);
+
+  z-index: var(--z-fixed);
+  padding: var(--space-2);
+
+  /* Premium glassmorphism background */
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+
+  border-radius: var(--radius-md);
+  border: 1px solid var(--glass-border);
+
+  box-shadow: var(--shadow-md);
 }
 
-  
-  .language-switcher button {
-    padding: 8px 12px;
-    border: none;
-    background-color: #333;
-    color: white;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 14px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .language-switcher button:hover {
-    background-color: #555;
-  }
-  
-  /* Tablet uyumluluğu */
- @media (max-width: 768px) {
+.language-switcher button {
+  padding: var(--space-3) var(--space-4);
+
+  /* Premium button styling */
+  background: var(--glass-bg-hover);
+  color: var(--color-text-primary);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
+
+  cursor: pointer;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-sm);
+  font-family: var(--font-primary);
+
+  transition: var(--transition-normal);
+
+  /* Subtle shadow */
+  box-shadow: var(--shadow-sm);
+}
+
+.language-switcher button:hover {
+  background: var(--gradient-gold);
+  color: var(--color-bg-primary);
+  border-color: var(--color-primary);
+
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow-primary);
+}
+
+.language-switcher button:active {
+  transform: translateY(0);
+}
+
+/* Active language button */
+.language-switcher button.active {
+  background: var(--color-primary);
+  color: var(--color-bg-primary);
+  border-color: var(--color-primary-dark);
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+
+@media (max-width: 768px) {
   .language-switcher {
-    top: 130px; 
-    right: 8px;
-    flex-direction: row;
+    top: 70px;
+    right: var(--space-3);
+    padding: var(--space-1);
   }
 
   .language-switcher button {
-    padding: 7px 10px;
-    font-size: 13px;
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--font-size-xs);
   }
 }
 
-  /* Mobil uyumluluğu */
- @media (max-width: 480px) {
+@media (max-width: 480px) {
   .language-switcher {
-    top: 130px;
-    right: 5px;
+    top: 70px;
+    right: var(--space-2);
     flex-direction: column;
+    gap: var(--space-1);
   }
 
   .language-switcher button {
-    padding: 6px 8px;
-    font-size: 12px;
+    padding: var(--space-2);
+    font-size: 0.7rem;
   }
 }
-
-  

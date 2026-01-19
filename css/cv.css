@@ -1,83 +1,116 @@
+/**
+ * CV Section - Premium Design
+ * ============================
+ * Uses design tokens from design-tokens.css
+ */
+
 #cv {
-  background: linear-gradient(145deg, #2d3748, #4a5568);
-  max-width: 760px;
-  margin: 3rem auto;
-  padding: 2.5rem 2rem;
-  border-radius: 20px;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: #cbd5e0;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.4s ease-in-out;
+  /* Base section styles from base.css */
+  max-width: var(--content-max-width);
+  text-align: center;
 }
 
 #cv h2 {
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: #ffcc00;
-  text-align: center;
-  margin-bottom: 1.8rem;
-  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.6);
+  /* Base h2 styles from base.css */
+  margin-bottom: var(--space-6);
 }
 
 #cv p {
-  font-size: 1.1rem;
-  color: #e2e8f0;
-  text-align: center;
-  margin-bottom: 2rem;
-  line-height: 1.7;
+  font-size: var(--font-size-md);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-8);
+  line-height: var(--line-height-relaxed);
 }
+
+/* ==================== DOWNLOAD BUTTON ==================== */
 
 #cv button {
-  display: block;
+  /* Premium button styling */
+  display: inline-block;
   margin: 0 auto;
-  padding: 12px 28px;
-  font-size: 1rem;
-  font-weight: bold;
-  color: #1a1a1a;
-  background-color: #ffcc00;
+  padding: var(--space-5) var(--space-8);
+
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  font-family: var(--font-primary);
+
+  /* Premium gradient background */
+  background: var(--gradient-gold);
+  color: var(--color-bg-primary);
+
   border: none;
-  border-radius: 10px;
+  border-radius: var(--radius-lg);
+
+  /* Premium shadow */
+  box-shadow: var(--shadow-premium);
+
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition: var(--transition-smooth);
+
+  /* Ensure high contrast */
+  position: relative;
+  overflow: hidden;
 }
 
+/* Add animated shine effect */
+#cv button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent);
+  transition: left var(--duration-slower) var(--ease-out);
+}
+
+/* Premium hover effect */
 #cv button:hover {
-  background-color: #ffd93b;
-  transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: var(--shadow-premium-hover) var(--shadow-glow-primary-hover);
+  filter: var(--filter-brightness-hover);
 }
 
-/* Responsive */
+#cv button:hover::before {
+  left: 100%;
+}
+
+/* Active/pressed state */
+#cv button:active {
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Focus state for accessibility */
+#cv button:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 4px;
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+
 @media (max-width: 768px) {
-  #cv {
-    padding: 2rem 1.6rem;
-    margin: 2rem 1.5rem;
-    border-radius: 18px;
-  }
-
-  #cv h2 {
-    font-size: 2rem;
-  }
-
   #cv p {
-    font-size: 1rem;
+    font-size: var(--font-size-base);
+  }
+
+  #cv button {
+    padding: var(--space-4) var(--space-7);
+    font-size: var(--font-size-sm);
   }
 }
 
 @media (max-width: 480px) {
-  #cv {
-    padding: 1.5rem 1rem;
-    margin: 1.5rem 1rem;
-    border-radius: 15px;
-  }
-
-  #cv h2 {
-    font-size: 1.8rem;
-  }
-
   #cv p {
-    font-size: 0.95rem;
+    font-size: var(--font-size-sm);
+  }
+
+  #cv button {
+    padding: var(--space-3) var(--space-6);
+    width: 100%;
+    max-width: 280px;
   }
 }

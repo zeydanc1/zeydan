@@ -1,152 +1,319 @@
+/**
+ * Aside Menu - Premium Design
+ * ============================
+ * Uses design tokens from design-tokens.css
+ * Note: This appears to be a sidebar navigation menu
+ */
+
+/* ==================== MENU TOGGLE BUTTON ==================== */
+
 .menu-toggle {
   position: fixed;
   top: 140px;
-  left: 20px;
-  background: #2c3e50;
-  border: none;
-  color: white; 
-  padding: 14px 22px;
-  font-size: 18px;
-  border-radius: 10px;
+  left: var(--space-8);
+
+  /* Premium button styling */
+  background: var(--glass-bg-hover);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+
+  border: 1px solid var(--glass-border);
+  color: var(--color-text-primary);
+
+  padding: var(--space-5) var(--space-6);
+  font-size: var(--font-size-lg);
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-semibold);
+
+  border-radius: var(--radius-md);
   cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  transition: background 0.3s ease;
-  z-index: 1100;
+
+  /* Premium shadow */
+  box-shadow: var(--shadow-premium);
+
+  transition: var(--transition-smooth);
+  z-index: calc(var(--z-modal) + 50);
+
   user-select: none;
 }
+
 .menu-toggle:hover {
-  background: #1a252f;
+  background: var(--gradient-gold);
+  color: var(--color-bg-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-premium-hover), var(--shadow-glow-primary);
 }
 
-/* Menü Overlay */
+.menu-toggle:active {
+  transform: translateY(0);
+}
+
+/* ==================== MENU OVERLAY ==================== */
+
 #menu-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.6);
+  inset: 0;
+
+  /* Premium dark backdrop with blur */
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.35s ease;
-  z-index: 1050;
+  transition: opacity var(--duration-slow) var(--ease-out),
+    visibility var(--duration-slow) var(--ease-out);
+
+  z-index: var(--z-modal);
 }
 
-/* Aside Menü */
+#menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ==================== ASIDE MENU ==================== */
+
 .menu-aside {
   position: fixed;
   top: 50%;
-  left: -320px; 
-  width: 320px;
-  max-width: 80vw;
+  left: -350px;
+  transform: translateY(-50%);
+
+  width: 350px;
+  max-width: 85vw;
   height: auto;
-  max-height: 80vh;
-  background: #ecf0f1; 
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-  padding: 30px 25px;
+  max-height: 85vh;
+
+  /* Premium glassmorphism */
+  background: var(--glass-bg-hover);
+  backdrop-filter: var(--glass-blur-strong);
+  -webkit-backdrop-filter: var(--glass-blur-strong);
+
+  /* Premium shadows and borders */
+  box-shadow: var(--shadow-premium);
+  border: 1px solid var(--glass-border);
+  border-radius: 0 var(--radius-2xl) var(--radius-2xl) 0;
+
+  padding: var(--space-10) var(--space-8);
+
   display: flex;
   flex-direction: column;
-  transition: left 0.35s ease, opacity 0.35s ease;
-  z-index: 1101;
-  color: #2c3e50; 
-  border-radius: 0 16px 16px 0;
-  transform: translateY(-50%);
+
+  transition: left var(--duration-slow) var(--ease-out),
+    opacity var(--duration-slow) var(--ease-out);
+
+  z-index: calc(var(--z-modal) + 1);
+
+  color: var(--color-text-primary);
+
   overflow-y: auto;
+  overflow-x: hidden;
+
   opacity: 0;
   pointer-events: none;
 }
 
-/* Menü açıkken */
+/* Scrollbar styling for menu */
+.menu-aside::-webkit-scrollbar {
+  width: 8px;
+}
+
+.menu-aside::-webkit-scrollbar-track {
+  background: var(--glass-bg);
+  border-radius: var(--radius-md);
+}
+
+.menu-aside::-webkit-scrollbar-thumb {
+  background: var(--gradient-gold);
+  border-radius: var(--radius-md);
+}
+
+/* ==================== MENU ACTIVE STATE ==================== */
+
 .menu-aside.active {
   left: 0;
   opacity: 1;
   pointer-events: auto;
-  background-image: url("zeydan1.jpeg");
+
+  /* Add optional background image if available */
+  /* background-image: url("zeydan1.jpeg"); */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-blend-mode: normal;
+  background-blend-mode: overlay;
 }
 
-/* Menü kapama butonu */
+/* ==================== MENU CLOSE BUTTON ==================== */
+
 .menu-close {
   align-self: flex-end;
+
   background: transparent;
   border: none;
-  font-size: 28px;
-  color: white; 
+
+  font-size: var(--font-size-4xl);
+  color: var(--color-text-primary);
+
   cursor: pointer;
-  margin-bottom: 20px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  margin-bottom: var(--space-8);
+
+  transition: var(--transition-normal);
+
+  width: var(--space-12);
+  height: var(--space-12);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: var(--radius-md);
 }
+
 .menu-close:hover {
-  color: #bdc3c7; 
+  background: var(--glass-bg-hover);
+  color: var(--color-primary);
+  transform: rotate(90deg);
 }
 
-/* Menü Başlık */
+/* ==================== MENU HEADER ==================== */
+
 .menu-header {
-  font-size: 1.9rem;
-  font-weight: 700;
-  margin-bottom: 30px;
-  letter-spacing: 1px;
-  color: white; 
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+
+  margin-bottom: var(--space-10);
+  letter-spacing: var(--letter-spacing-wide);
+
+  color: var(--color-primary);
   text-transform: uppercase;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); 
+
+  /* Gradient text effect */
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  text-shadow: var(--text-shadow-lg);
 }
 
-/* Menü Listesi */
+/* ==================== MENU CONTENT ==================== */
+
 .menu-content ul {
   list-style: none;
-  padding-right: 10px;
-}
-.menu-content ul li {
-  margin-bottom: 18px;
-}
-.menu-content ul li a {
-  color: white; 
-  text-decoration: none;
-  font-size: 1.1rem;
-  padding: 10px 14px;
-  border-radius: 6px;
-  display: inline-block;
-  transition: background 0.3s ease, color 0.3s ease;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); 
-}
-.menu-content ul li a:hover,
-.menu-content ul li a:focus {
-  background: rgba(189, 195, 199, 0.7); 
-  color: #2c3e50; 
-  outline: none;
-  text-shadow: none; 
+  padding: 0;
+  margin: 0;
 }
 
-/* Responsive */
+.menu-content ul li {
+  margin-bottom: var(--space-5);
+}
+
+.menu-content ul li a {
+  color: var(--color-text-primary);
+  text-decoration: none;
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+
+  padding: var(--space-4) var(--space-5);
+
+  /* Premium card styling */
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+
+  display: block;
+
+  transition: var(--transition-normal);
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* Add gradient overlay on hover */
+.menu-content ul li a::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-gold);
+  opacity: 0;
+  transition: opacity var(--duration-normal) var(--ease-out);
+  z-index: 0;
+}
+
+.menu-content ul li a>* {
+  position: relative;
+  z-index: 1;
+}
+
+.menu-content ul li a:hover,
+.menu-content ul li a:focus {
+  background: var(--glass-bg-hover);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  transform: translateX(8px);
+  box-shadow: var(--shadow-lg);
+  outline: none;
+}
+
+.menu-content ul li a:hover::before {
+  opacity: 0.1;
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+
 @media screen and (max-width: 1024px) {
   .menu-aside {
-    width: 280px;
+    width: 300px;
   }
+
   .menu-toggle {
-    top: 60px;
-    padding: 12px 18px;
-    font-size: 17px;
+    top: 70px;
+    padding: var(--space-4) var(--space-5);
+    font-size: var(--font-size-base);
   }
 }
-@media screen and (max-width: 767px) {
+
+@media screen and (max-width: 768px) {
+  .menu-aside {
+    width: 280px;
+    padding: var(--space-8) var(--space-6);
+  }
+
+  .menu-toggle {
+    top: 70px;
+    left: var(--space-6);
+    padding: var(--space-4);
+    font-size: var(--font-size-base);
+  }
+
+  .menu-header {
+    font-size: var(--font-size-2xl);
+  }
+
+  .menu-content ul li a {
+    font-size: var(--font-size-sm);
+    padding: var(--space-3) var(--space-4);
+  }
+}
+
+@media screen and (max-width: 480px) {
   .menu-aside {
     width: 260px;
-    padding: 22px 18px;
+    padding: var(--space-6) var(--space-5);
   }
+
   .menu-toggle {
-    top: 50px;
-    left: 15px;
-    padding: 12px 16px;
-    font-size: 16px;
+    left: var(--space-4);
+    padding: var(--space-3);
+    font-size: var(--font-size-sm);
   }
+
   .menu-header {
-    font-size: 1.6rem;
+    font-size: var(--font-size-xl);
   }
-  .menu-content ul li a {
-    font-size: 1.05rem;
-    padding: 9px 12px;
+
+  .menu-content ul li {
+    margin-bottom: var(--space-4);
   }
 }

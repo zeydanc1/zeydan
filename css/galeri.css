@@ -1,5 +1,20 @@
-@import url('teknofest2025.css');
+/**
+ * Galeri Page - Main Stylesheet
+ * ===============================
+ * Import order: foundation → components
+ */
+
+/* ===== 1. Foundation ===== */
+@import url('design-tokens.css');
+@import url('base.css');
+@import url('animations.css');
+
+/* ===== 2. Layout Components ===== */
 @import url('headermenu.css');
-@import url('iletisim.css');
-@import url('cv.css');
 @import url('footer.css');
+@import url('dil.css');
+
+/* ===== 3. Content Sections ===== */
+@import url('teknofest2025.css');
+@import url('cv.css');
+@import url('iletisim.css');

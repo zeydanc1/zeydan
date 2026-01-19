@@ -1,153 +1,370 @@
-/*TEKNOFEST 2025 – GALERİ BÖLÜMÜ*/
+/**
+ * Teknofest 2025 Gallery - Premium Design
+ * ========================================
+ * Uses design tokens from design-tokens.css
+ */
+
+/* ==================== GALLERY SECTION ==================== */
 
 #teknofest2025 {
-  background: linear-gradient(135deg, #1a202c, #2d3748);
-  max-width: 950px;
-  margin: 3rem auto;
-  padding: 2.5rem 2rem;
-  border-radius: 20px;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45),
-              inset 0 1px 4px rgba(255, 255, 255, 0.08);
-  color: #e2e8f0;
-  border: 3px solid #ffcc00;
-  transition: 0.35s ease;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+  /* Base section styles from base.css */
+  max-width: var(--container-max-width);
 
-#teknofest2025:hover {
-  background: linear-gradient(135deg, #232d3b, #3a475b);
-  box-shadow: 0 22px 45px rgba(0, 0, 0, 0.55),
-              inset 0 1px 4px rgba(255, 255, 255, 0.12);
+  /* Premium border */
+  border: 3px solid var(--color-primary);
+
+  /* Enhanced entrance animation */
+  animation: fadeInUp var(--duration-slow) var(--ease-out);
 }
 
 #teknofest2025 h2 {
-  text-align: center;
-  font-size: 2.3rem;
-  font-weight: 700;
-  color: #ffcc00;
-  margin-bottom: 2rem;
-  text-shadow: 0 3px 10px rgba(0,0,0,0.55);
-  letter-spacing: 0.03em;
+  /* Base h2 styles from base.css */
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-8);
+  letter-spacing: var(--letter-spacing-wide);
 }
 
-/*GALERİ*/
+/* ==================== GALLERY GRID ==================== */
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--space-8);
+  padding: var(--space-4);
 }
+
+/* ==================== GALLERY IMAGES ==================== */
 
 .gallery img {
   width: 100%;
-  border-radius: 14px;
+  height: 250px;
+  object-fit: cover;
+
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--color-border-accent);
+
+  /* Premium shadows */
+  box-shadow: var(--shadow-lg);
+
   cursor: pointer;
-  border: 2px solid rgba(255, 204, 0, 0.25);
-  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.45);
-  transition: 0.35s ease;
+  transition: var(--transition-smooth);
+
+  /* Entrance animation */
+  animation: scaleIn var(--duration-slow) var(--ease-out);
+  animation-fill-mode: both;
 }
 
+/* Stagger animation for gallery images */
+.gallery img:nth-child(1) {
+  animation-delay: 0.05s;
+}
+
+.gallery img:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.gallery img:nth-child(3) {
+  animation-delay: 0.15s;
+}
+
+.gallery img:nth-child(4) {
+  animation-delay: 0.2s;
+}
+
+.gallery img:nth-child(5) {
+  animation-delay: 0.25s;
+}
+
+.gallery img:nth-child(6) {
+  animation-delay: 0.3s;
+}
+
+.gallery img:nth-child(7) {
+  animation-delay: 0.35s;
+}
+
+.gallery img:nth-child(8) {
+  animation-delay: 0.4s;
+}
+
+.gallery img:nth-child(9) {
+  animation-delay: 0.45s;
+}
+
+.gallery img:nth-child(10) {
+  animation-delay: 0.5s;
+}
+
+.gallery img:nth-child(11) {
+  animation-delay: 0.55s;
+}
+
+.gallery img:nth-child(12) {
+  animation-delay: 0.6s;
+}
+
+.gallery img:nth-child(13) {
+  animation-delay: 0.65s;
+}
+
+.gallery img:nth-child(14) {
+  animation-delay: 0.7s;
+}
+
+.gallery img:nth-child(15) {
+  animation-delay: 0.75s;
+}
+
+/* Premium hover effect */
 .gallery img:hover {
-  transform: scale(1.05);
-  border-color: #ffcc00;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.55);
-  opacity: 0.95;
+  transform: scale(1.08) translateY(-5px);
+  border-color: var(--color-primary);
+  box-shadow:
+    var(--shadow-premium-hover),
+    var(--shadow-glow-primary);
+  filter: var(--filter-brightness-hover) var(--filter-saturate-hover);
+  z-index: 10;
 }
 
-/* MODAL*/
+/* ==================== MODAL OVERLAY ==================== */
 
 .modal {
-  display: none; /* gizli başlangıç */
+  display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.92);
-  z-index: 2000;
-  backdrop-filter: blur(3px);
+
+  /* Premium dark backdrop with strong blur */
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  z-index: var(--z-modal);
+
+  /* Fade in animation when shown */
+  animation: fadeIn var(--duration-normal) var(--ease-out);
 }
 
-/* Modal açılınca fleks ile ortalasın */
 .modal.show {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Fotoğraf boyutu (biraz küçültülmüş versiyon) */
-.modal img {
-  max-width: 80vw; 
-  max-height: 60vh;
-  border-radius: 12px;
-  object-fit: contain;
-  transition: transform 0.25s ease;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+/* ==================== MODAL INNER CONTAINER ==================== */
+
+.modal-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-16);
 }
 
-/* Kapatma butonu */
+/* ==================== MODAL IMAGE ==================== */
+
+.modal img,
+.modal-content {
+  max-width: 85vw;
+  max-height: 75vh;
+
+  border-radius: var(--radius-xl);
+
+  /* Premium shadows */
+  box-shadow:
+    var(--shadow-premium),
+    0 0 50px rgba(255, 193, 7, 0.3);
+
+  object-fit: contain;
+
+  /* Scale in animation */
+  animation: scaleIn var(--duration-slow) var(--ease-bounce);
+
+  /* Subtle border glow */
+  border: 2px solid var(--glass-border);
+}
+
+/* ==================== CLOSE BUTTON ==================== */
 
 .close {
   position: absolute;
-  top: 30px;
-  right: 40px;
-  font-size: 45px;
-  font-weight: bold;
-  color: #ffcc00;
+  top: var(--space-10);
+  right: var(--space-12);
+
+  font-size: 3rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+
   cursor: pointer;
-  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.75);
-  transition: 0.3s;
+
+  /* Premium shadow */
+  text-shadow: var(--text-shadow-lg);
+
+  transition: var(--transition-normal);
+
+  /* Add background for better visibility */
+  width: var(--space-16);
+  height: var(--space-16);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--glass-bg-hover);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+
+  border-radius: var(--radius-full);
+  border: 1px solid var(--glass-border);
 }
 
 .close:hover {
-  color: #ffdd33;
-  transform: scale(1.15);
+  color: var(--color-primary-light);
+  transform: rotate(90deg) scale(1.2);
+  background: var(--gradient-gold);
+  color: var(--color-bg-primary);
+  box-shadow: var(--shadow-glow-primary-hover);
 }
 
-/* =======================================
-           OK TUŞLARI
-   ======================================= */
+/* ==================== NAVIGATION ARROWS ==================== */
 
 .arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 60px;
-  padding: 12px;
-  color: #ffcc00;
+
+  font-size: 4rem;
+  padding: var(--space-5);
+  color: var(--color-primary);
+
   cursor: pointer;
-  transition: 0.3s;
   user-select: none;
-  text-shadow: 0 5px 15px rgba(0, 0, 0, 0.75);
+
+  /* Premium shadow */
+  text-shadow: var(--text-shadow-lg);
+
+  transition: var(--transition-normal);
+
+  /* Add background */
+  background: var(--glass-bg-hover);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+
+  border-radius: var(--radius-full);
+  border: 1px solid var(--glass-border);
+
+  width: var(--space-16);
+  height: var(--space-16);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .arrow:hover {
-  color: #ffdd33;
-  transform: translateY(-50%) scale(1.25);
+  color: var(--color-primary-light);
+  transform: translateY(-50%) scale(1.3);
+  background: var(--gradient-gold);
+  color: var(--color-bg-primary);
+  box-shadow: var(--shadow-glow-primary-hover);
 }
 
-.arrow.left { left: 20px; }
-.arrow.right { right: 20px; }
+.arrow.left {
+  left: var(--space-8);
+}
 
-/* =======================================
-         RESPONSIVE TASARIM
-   ======================================= */
+.arrow.right {
+  right: var(--space-8);
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
 
 @media (max-width: 768px) {
-  .modal-content {
-    max-width: 92%;
+  .gallery {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: var(--space-5);
   }
+
+  .gallery img {
+    height: 180px;
+  }
+
+  .modal img,
+  .modal-content {
+    max-width: 92vw;
+    max-height: 70vh;
+  }
+
   .arrow {
-    font-size: 48px;
+    font-size: 3rem;
+    width: var(--space-12);
+    height: var(--space-12);
+  }
+
+  .close {
+    font-size: 2.5rem;
+    width: var(--space-12);
+    height: var(--space-12);
+    top: var(--space-6);
+    right: var(--space-6);
+  }
+
+  .modal-inner {
+    padding: var(--space-10);
   }
 }
 
 @media (max-width: 480px) {
-  #teknofest2025 {
-    padding: 1.5rem 1rem;
+  .gallery {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: var(--space-4);
   }
+
+  .gallery img {
+    height: 140px;
+  }
+
   .arrow {
-    font-size: 38px;
+    font-size: 2.5rem;
+    width: var(--space-10);
+    height: var(--space-10);
   }
+
+  .arrow.left {
+    left: var(--space-4);
+  }
+
+  .arrow.right {
+    right: var(--space-4);
+  }
+
   .close {
-    font-size: 36px;
-    right: 20px;
+    font-size: 2rem;
+    width: var(--space-10);
+    height: var(--space-10);
+    top: var(--space-4);
+    right: var(--space-4);
+  }
+
+  .modal-inner {
+    padding: var(--space-6);
+  }
+
+  .modal img,
+  .modal-content {
+    max-width: 95vw;
+    max-height: 65vh;
+  }
+}
+
+/* ==================== GRID OPTIMIZATION ==================== */
+
+/* Ensure last row items don't stretch */
+@media (min-width: 769px) {
+  .gallery::after {
+    content: "";
+    flex: auto;
   }
 }

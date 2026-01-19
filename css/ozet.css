@@ -1,71 +1,50 @@
+/**
+ * Ozet Section - Premium Design
+ * ==============================
+ * Uses design tokens from design-tokens.css
+ */
+
 #ozet {
-  background: linear-gradient(145deg, #2d3748, #4a5568);
-  padding: 2.5rem;
-  border-radius: 20px;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
-  max-width: 800px;
-  margin: 3rem auto;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: #e2e8f0;
-  line-height: 1.9;
-  user-select: text;
-  transition: all 0.4s ease-in-out;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  /* Note: Base section styles are in base.css */
+  /* This file contains specific overrides for #ozet section */
+
+  /* Additional premium effects for ozet */
+  position: relative;
+  overflow: hidden;
 }
 
-#ozet:hover {
-  transform: translateY(-7px);
-  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.5);
+/* Add animated background gradient */
+#ozet::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-mesh);
+  opacity: 0.3;
+  z-index: 0;
+  pointer-events: none;
+  animation: gradientShift 15s ease infinite;
+  background-size: 200% 200%;
 }
 
-#ozet h2 {
-  font-size: 2.2rem;
-  font-weight: 700;
-  margin-bottom: 1.8rem;
-  color: #ffcc00;
-  text-align: center;
-  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.6);
+/* Ensure content is above the animated background */
+#ozet>* {
+  position: relative;
+  z-index: 1;
 }
 
+/* Specific text justification for this section */
 #ozet p {
-  font-size: 1.2rem;
-  margin-bottom: 1.8rem;
-  text-align: justify;
-  color: #cbd5e0;
+  text-align: center;
+  /* Changed from justify */
+  hyphens: auto;
+  max-width: 80ch;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+/* Responsive overrides if needed */
 @media (max-width: 768px) {
-  #ozet {
-    padding: 2rem;
-    margin: 2rem;
-    border-radius: 18px;
-  }
-
-  #ozet h2 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-  }
-
   #ozet p {
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  #ozet {
-    padding: 1.5rem;
-    margin: 1.5rem;
-    border-radius: 15px;
-  }
-
-  #ozet h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1.2rem;
-  }
-
-  #ozet p {
-    font-size: 1rem;
-    margin-bottom: 1.2rem;
+    text-align: left;
   }
 }

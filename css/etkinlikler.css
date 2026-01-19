@@ -1,79 +1,191 @@
-/* Genel bölüm */
+/**
+ * Etkinlikler (Events) Section - Premium Design
+ * ==============================================
+ * Uses design tokens from design-tokens.css
+ */
+
 #etkinlikler {
-  padding: 2.5rem 1rem;
-  background: linear-gradient(135deg, #1e293b, #334155);
-  color: #f1f5f9;
-  font-family: "Segoe UI", sans-serif;
-  max-width: 1200px;
-  margin: auto;
+  /* Base section styles from base.css */
+  max-width: var(--container-max-width);
 }
 
-/* Başlık */
 #etkinlikler h2 {
-  font-size: 2.3rem;
-  text-align: center;
-  color: #facc15;
-  margin-bottom: 2rem;
-  font-weight: 800;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  /* Base h2 styles from base.css */
+  margin-bottom: var(--space-8);
 }
 
-/* Etkinlik Kartı */
+/* ==================== EVENT CARDS ==================== */
+
 .etkinlik-karti {
-  background-color: #475569;
-  border-radius: 1.2rem;
-  overflow: hidden;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  /* Premium glassmorphism card */
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--glass-border);
+
+  /* Premium shadows */
+  box-shadow: var(--shadow-premium);
+
+  /* Layout */
   display: flex;
   flex-direction: column;
-  transition: all 0.3s ease-in-out;
-  margin-bottom: 1.5rem;
+  overflow: hidden;
+
+  margin-bottom: var(--space-8);
+
+  /* Smooth transitions */
+  transition: var(--transition-smooth);
+
+  /* Entrance animation */
+  animation: scaleIn var(--duration-slow) var(--ease-out);
+  animation-fill-mode: both;
+
+  position: relative;
 }
 
-/* Hover efekti */
+/* Add gradient overlay */
+.etkinlik-karti::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-radial-accent);
+  opacity: 0;
+  transition: var(--transition-normal);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Premium hover effect */
 .etkinlik-karti:hover {
-  transform: scale(1.02);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--shadow-premium-hover);
+  border-color: var(--color-border-accent);
 }
 
-/* Görsel */
+.etkinlik-karti:hover::before {
+  opacity: 0.2;
+}
+
+/* ==================== EVENT IMAGE ==================== */
+
 .etkinlik-karti img {
   width: 100%;
   height: auto;
+  max-height: 400px;
   object-fit: contain;
-  background-color: #1e293b; /* Boş alanlar estetik dursun */
-  padding: 0.5rem;
+
+  /* Premium background for images */
+  background: linear-gradient(135deg, var(--color-bg-tertiary), var(--color-bg-secondary));
+  padding: var(--space-4);
+
+  transition: var(--transition-normal);
+  position: relative;
+  z-index: 1;
 }
 
-/* Detay kısmı */
+.etkinlik-karti:hover img {
+  transform: scale(1.03);
+  filter: var(--filter-brightness-hover) var(--filter-saturate-hover);
+}
+
+/* ==================== EVENT DETAILS ==================== */
+
 .etkinlik-detay {
-  padding: 1.5rem;
+  padding: var(--space-7);
+  position: relative;
+  z-index: 1;
 }
 
 .etkinlik-detay h3 {
-  color: #facc15;
-  font-size: 1.4rem;
-  margin-bottom: 0.6rem;
+  color: var(--color-primary);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-4);
+
+  /* Gradient text effect */
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.etkinlik-detay a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm);
+  display: inline-block;
+  margin-bottom: var(--space-4);
+  padding: var(--space-2) var(--space-4);
+
+  /* Premium button style */
+  background: var(--glass-bg-hover);
+  border: 1px solid var(--color-border-accent);
+  border-radius: var(--radius-md);
+
+  transition: var(--transition-normal);
+}
+
+.etkinlik-detay a:hover {
+  background: var(--gradient-gold);
+  color: var(--color-bg-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow-primary);
 }
 
 .etkinlik-detay p {
-  font-size: 1rem;
-  color: #e2e8f0;
-  margin-bottom: 1rem;
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-5);
+  line-height: var(--line-height-relaxed);
 }
+
+/* ==================== EVENT INFO LIST ==================== */
 
 .etkinlik-detay ul {
   list-style: none;
   padding: 0;
-  font-size: 0.95rem;
-  color: #cbd5e1;
+  margin: 0;
+
+  /* Premium card for the list */
+  background: var(--glass-bg-hover);
+  border-radius: var(--radius-md);
+  padding: var(--space-5);
+  border: 1px solid var(--glass-border);
 }
 
 .etkinlik-detay ul li {
-  margin-bottom: 0.4rem;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-tertiary);
+  margin-bottom: var(--space-3);
+  padding-left: var(--space-6);
+  position: relative;
 }
 
-/* Tablet ve yukarısı */
+.etkinlik-detay ul li:last-child {
+  margin-bottom: 0;
+}
+
+/* Add icon before each list item */
+.etkinlik-detay ul li::before {
+  content: '●';
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-size: var(--font-size-lg);
+  animation: pulse 2s var(--ease-in-out) infinite;
+}
+
+.etkinlik-detay ul li strong {
+  color: var(--color-primary-light);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+
+/* Tablet and larger */
 @media (min-width: 640px) {
   .etkinlik-karti {
     flex-direction: row;
@@ -82,13 +194,49 @@
 
   .etkinlik-karti img {
     width: 45%;
-    height: auto;
     max-height: 350px;
-    object-fit: contain;
+    padding: var(--space-6);
   }
 
   .etkinlik-detay {
     width: 55%;
-    padding: 2rem;
+    padding: var(--space-8);
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 640px) {
+  .etkinlik-detay {
+    padding: var(--space-6);
+  }
+
+  .etkinlik-detay h3 {
+    font-size: var(--font-size-xl);
+  }
+
+  .etkinlik-detay p {
+    font-size: var(--font-size-sm);
+  }
+
+  .etkinlik-detay ul {
+    padding: var(--space-4);
+  }
+
+  .etkinlik-detay ul li {
+    font-size: var(--font-size-xs);
+  }
+}
+
+@media (max-width: 480px) {
+  .etkinlik-detay {
+    padding: var(--space-5);
+  }
+
+  .etkinlik-karti img {
+    padding: var(--space-3);
+  }
+
+  .etkinlik-detay h3 {
+    font-size: var(--font-size-lg);
   }
 }

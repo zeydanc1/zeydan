@@ -1,106 +1,96 @@
-#calismalar {
-  background: linear-gradient(145deg, #2d3748, #4a5568);
-  max-width: 760px;
-  margin: 3rem auto;
-  padding: 2.5rem 2rem;
-  border-radius: 20px;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: #cbd5e0;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.4s ease-in-out;
-}
+/**
+ * Calismalar (Projects) - Premium Design (Obsidian & Champagne)
+ * ==============================================================
+ */
 
-#calismalar h2 {
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: #ffcc00; /* altın sarısı */
-  text-align: center;
-  margin-bottom: 1.8rem;
-  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.6);
+#calismalar {
+  max-width: var(--content-max-width);
 }
 
 #calismalar ul {
   list-style-type: none;
-  padding-left: 0;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: var(--space-6);
 }
+
+/* ==================== PROJECT CARD ==================== */
 
 #calismalar ul li {
-  background: #3a475a; /* açık koyu mavi-gri */
-  border-left: 5px solid #ffcc00; /* altın sarısı vurgusu */
-  margin-bottom: 2rem;
-  padding: 1.6rem 1.4rem;
-  border-radius: 15px;
-  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.4);
-  transition: box-shadow 0.4s ease, transform 0.4s ease;
-  font-size: 1.2rem;
-  line-height: 1.7;
-  color: #e2e8f0;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+
+  /* Refined Border */
+  border: 1px solid var(--glass-border);
+  border-left: 3px solid var(--color-primary);
+  /* Keeps identity but thinner */
+  border-radius: var(--radius-lg);
+
+  padding: var(--space-6);
+
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
 }
 
+/* Hover Effect */
 #calismalar ul li:hover {
-  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.5);
-  transform: translateY(-7px);
-  background: #455973;
+  transform: translateX(8px);
+  background: var(--glass-bg-hover);
+  border-color: var(--color-border-accent);
+  border-left-color: var(--color-primary-light);
+  box-shadow: var(--shadow-premium-hover);
 }
 
+/* Typography */
 #calismalar ul li strong {
-  color: #ffdd57; /* parlak altın */
-  font-weight: 600;
   display: block;
-  margin-bottom: 0.6rem;
-  font-size: 1.3rem;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-2);
+
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 #calismalar ul li em {
-  color: #d6dce1;
-  font-style: italic;
-  font-weight: 500;
   display: block;
-  margin-bottom: 0.7rem;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-tertiary);
+  margin-bottom: var(--space-4);
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
+/* Technologies List (if used in HTML, or just text) */
+/* Assuming text content based on previous file */
+#calismalar ul li {
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+/* Link Styling */
 #calismalar ul li a {
-  color: #ffcc00;
-  text-decoration: underline;
-  transition: color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  margin-top: var(--space-4);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+  font-size: var(--font-size-sm);
 }
 
-#calismalar ul li a:hover {
-  color: #ffd93b;
+#calismalar ul li a::after {
+  content: '→';
+  margin-left: 6px;
+  transition: transform var(--transition-fast);
 }
 
-/* Tablet & Mobil responsive */
-@media (max-width: 768px) {
-  #calismalar {
-    padding: 2rem 1.6rem;
-    margin: 2rem 1.5rem;
-    border-radius: 18px;
-  }
-
-  #calismalar h2 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-  }
-
-  #calismalar ul li {
-    font-size: 1.1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  #calismalar {
-    padding: 1.5rem 1rem;
-    margin: 1.5rem 1rem;
-    border-radius: 15px;
-  }
-
-  #calismalar h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1.2rem;
-  }
-
-  #calismalar ul li {
-    font-size: 1rem;
-  }
+#calismalar ul li a:hover::after {
+  transform: translateX(4px);
 }

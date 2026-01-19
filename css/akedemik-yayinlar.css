@@ -1,100 +1,159 @@
+/**
+ * Akademik Yayinlar (Academic Publications) - Premium Design
+ * ===========================================================
+ */
+
 #akademik-yayinlar {
-  background: linear-gradient(145deg, #2d3748, #4a5568);
-  max-width: 800px;
-  margin: 3rem auto;
-  padding: 2.5rem 2rem;
-  border-radius: 20px;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: #cbd5e0;
-  transition: all 0.4s ease-in-out;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  max-width: var(--content-max-width);
 }
 
 #akademik-yayinlar h2 {
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: #ffcc00; /* hafif altın sarısı */
-  margin-bottom: 1.8rem;
-  text-align: center;
-  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.6);
+  margin-bottom: var(--space-8);
 }
+
+/* ==================== ARTICLE CARDS ==================== */
 
 #akademik-yayinlar article {
-  background: #3a475a; /* biraz açık koyu mavi-gri */
-  border-left: 5px solid #ffcc00; /* altın sarısı vurgusu */
-  padding: 1.6rem 1.4rem;
-  border-radius: 15px;
-  margin-bottom: 2rem;
-  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.4);
-  transition: box-shadow 0.4s ease, transform 0.4s ease;
-  color: #e2e8f0;
+  /* Premium glassmorphism card */
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+
+  /* Refined Border */
+  border: 1px solid var(--glass-border);
+  border-left: 3px solid var(--color-primary);
+  border-radius: var(--radius-lg);
+
+  /* Premium shadows */
+  box-shadow:
+    var(--shadow-lg),
+    inset 0 1px rgba(255, 255, 255, 0.1);
+
+  /* Spacing */
+  padding: var(--space-7) var(--space-6);
+  margin-bottom: var(--space-8);
+
+  /* Typography */
+  color: var(--color-text-secondary);
+
+  /* Smooth transitions */
+  transition: var(--transition-smooth);
+
+  /* Add entrance animation */
+  animation: fadeInUp var(--duration-slow) var(--ease-out);
+  animation-fill-mode: both;
+
+  position: relative;
+  overflow: hidden;
 }
 
-#akademik-yayinlar article:hover {
-  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.5);
-  transform: translateY(-7px);
+/* Stagger animation */
+#akademik-yayinlar article:nth-child(2) {
+  animation-delay: 0.1s;
 }
+
+#akademik-yayinlar article:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+#akademik-yayinlar article:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+/* Add gradient overlay that expands on hover */
+#akademik-yayinlar article::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  background: var(--gradient-accent);
+  opacity: 0.05;
+  transition: width var(--duration-slow) var(--ease-out);
+}
+
+/* Premium hover effect */
+#akademik-yayinlar article:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    var(--shadow-premium-hover),
+    var(--shadow-glow-primary);
+  background: var(--glass-bg-hover);
+  border-left-color: var(--color-primary-light);
+  border-color: var(--color-border-accent);
+}
+
+#akademik-yayinlar article:hover::before {
+  width: 100%;
+}
+
+/* ==================== ARTICLE HEADINGS ==================== */
 
 #akademik-yayinlar article h3 {
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: #ffcc00;
-  margin-bottom: 0.8rem;
-  line-height: 1.3;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+  margin-bottom: var(--space-4);
+  line-height: var(--line-height-tight);
+
+  /* Gradient text effect */
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  transition: var(--transition-normal);
 }
 
+#akademik-yayinlar article:hover h3 {
+  filter: var(--filter-brightness-hover);
+  transform: translateX(5px);
+}
+
+/* ==================== ARTICLE PARAGRAPHS ==================== */
+
 #akademik-yayinlar article p {
-  font-size: 1.2rem;
-  line-height: 1.7;
-  margin: 0.4rem 0;
-  color: #cbd5e0;
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-relaxed);
+  margin: var(--space-2) 0;
+  color: var(--color-text-secondary);
 }
 
 #akademik-yayinlar article p strong {
-  color: #ffdd57; /* biraz daha parlak altın */
+  color: var(--color-primary-light);
+  font-weight: var(--font-weight-semibold);
 }
 
-/* Tablet & Mobil responsive */
-@media (max-width: 768px) {
-  #akademik-yayinlar {
-    padding: 2rem 1.6rem;
-    margin: 2rem 1.5rem;
-    border-radius: 18px;
-  }
+/* ==================== RESPONSIVE DESIGN ==================== */
 
-  #akademik-yayinlar h2 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
+@media (max-width: 768px) {
+  #akademik-yayinlar article {
+    padding: var(--space-6) var(--space-5);
+    margin-bottom: var(--space-6);
   }
 
   #akademik-yayinlar article h3 {
-    font-size: 1.2rem;
+    font-size: var(--font-size-xl);
   }
 
   #akademik-yayinlar article p {
-    font-size: 1.1rem;
+    font-size: var(--font-size-sm);
   }
 }
 
 @media (max-width: 480px) {
-  #akademik-yayinlar {
-    padding: 1.5rem 1rem;
-    margin: 1.5rem 1rem;
-    border-radius: 15px;
-  }
-
-  #akademik-yayinlar h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1.2rem;
+  #akademik-yayinlar article {
+    padding: var(--space-5) var(--space-4);
+    margin-bottom: var(--space-5);
+    border-left-width: 3px;
   }
 
   #akademik-yayinlar article h3 {
-    font-size: 1rem;
+    font-size: var(--font-size-lg);
   }
 
   #akademik-yayinlar article p {
-    font-size: 1rem;
+    font-size: var(--font-size-xs);
   }
 }

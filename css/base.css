@@ -1,0 +1,360 @@
+/**
+ * Base Styles - Foundation
+ * =========================
+ * Global reset, base element styles, and utilities
+ */
+
+/* Import Outfit Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;500;700;900&display=swap');
+
+/* ==================== MODERN CSS RESET ==================== */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==================== BODY ==================== */
+
+body {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height-normal);
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-primary);
+
+    /* Subtle mesh background */
+    background-image:
+        radial-gradient(circle at 15% 50%, rgba(251, 191, 36, 0.05), transparent 25%),
+        radial-gradient(circle at 85% 30%, rgba(59, 130, 246, 0.05), transparent 25%);
+    background-attachment: fixed;
+
+    padding-top: var(--header-height);
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* ==================== SELECTION STYLES ==================== */
+
+::selection {
+    background-color: var(--color-primary);
+    color: var(--color-bg-primary);
+}
+
+/* ==================== FOCUS STYLES ==================== */
+
+:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+}
+
+/* ==================== HEADINGS ==================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    line-height: var(--line-height-tight);
+    margin-bottom: var(--space-4);
+    letter-spacing: var(--letter-spacing-wide);
+}
+
+h1 {
+    font-size: var(--font-size-4xl);
+    margin-bottom: var(--space-6);
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h2 {
+    font-size: var(--font-size-3xl);
+    color: var(--color-primary-light);
+}
+
+h3 {
+    font-size: var(--font-size-2xl);
+}
+
+h4 {
+    font-size: var(--font-size-xl);
+}
+
+h5 {
+    font-size: var(--font-size-lg);
+}
+
+/* ==================== PARAGRAPHS ==================== */
+
+p {
+    margin-bottom: var(--space-4);
+    color: var(--color-text-secondary);
+    max-width: 75ch;
+    /* Optimum reading width */
+    margin-left: auto;
+    /* Auto margins for centering */
+    margin-right: auto;
+}
+
+
+/* ==================== LINKS ==================== */
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: var(--transition-normal);
+    position: relative;
+}
+
+a:hover {
+    color: var(--color-primary-light);
+}
+
+a:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+}
+
+/* ==================== LISTS ==================== */
+
+ul,
+ol {
+    margin-bottom: var(--space-6);
+    padding-left: var(--space-8);
+}
+
+li {
+    margin-bottom: var(--space-2);
+}
+
+/* Remove default list styles for navigation */
+nav ul,
+nav ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* ==================== IMAGES & MEDIA ==================== */
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+img {
+    border-radius: var(--radius-md);
+}
+
+/* ==================== BUTTONS ==================== */
+
+button {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: inherit;
+}
+
+/* ==================== FORMS ==================== */
+
+input,
+textarea,
+select {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+}
+
+/* ==================== MAIN CONTENT ==================== */
+
+main {
+    min-height: calc(100vh - var(--header-height) - 200px);
+    position: relative;
+}
+
+/* ==================== SECTIONS ==================== */
+
+section {
+    background: var(--gradient-primary);
+    padding: var(--space-10) var(--space-8);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-xl);
+    max-width: var(--content-max-width);
+    margin: var(--space-12) auto;
+    /* Centered margin */
+    border: 1px solid var(--color-border-secondary);
+    transition: var(--transition-smooth);
+    position: relative;
+    text-align: center;
+    /* Center text globally for sections */
+
+    /* Add subtle pattern overlay */
+    background-image:
+        var(--gradient-mesh),
+        var(--gradient-primary);
+}
+
+section:hover {
+    transform: translateY(-7px);
+    box-shadow: var(--shadow-premium-hover);
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: var(--space-8);
+    /* Increased spacing */
+    font-size: var(--font-size-4xl);
+}
+
+/* ==================== SCROLLBAR STYLING ==================== */
+
+/* For Webkit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-bg-secondary);
+    border-radius: var(--radius-lg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--color-primary), var(--color-primary-dark));
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--color-bg-secondary);
+    transition: var(--transition-normal);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, var(--color-primary-light), var(--color-primary));
+    box-shadow: var(--shadow-glow-primary);
+}
+
+/* For Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-primary) var(--color-bg-secondary);
+}
+
+/* ==================== UTILITY CLASSES ==================== */
+
+/* Screen reader only */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Container */
+.container {
+    max-width: var(--container-max-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--space-8);
+    padding-right: var(--space-8);
+}
+
+/* ==================== RESPONSIVE ADJUSTMENTS ==================== */
+
+@media (max-width: 768px) {
+    body {
+        padding-top: var(--header-height-mobile);
+        font-size: var(--font-size-sm);
+    }
+
+    section {
+        padding: var(--space-8) var(--space-6);
+        margin: var(--space-8) var(--space-5);
+    }
+
+    h1 {
+        font-size: var(--font-size-3xl);
+    }
+
+    h2 {
+        font-size: var(--font-size-2xl);
+    }
+
+    h3 {
+        font-size: var(--font-size-xl);
+    }
+}
+
+@media (max-width: 480px) {
+    section {
+        padding: var(--space-6) var(--space-4);
+        margin: var(--space-6) var(--space-4);
+    }
+
+    h1 {
+        font-size: var(--font-size-2xl);
+    }
+
+    h2 {
+        font-size: var(--font-size-xl);
+    }
+}
+
+/* ==================== REDUCED MOTION ==================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* ==================== PRINT STYLES ==================== */
+
+@media print {
+    body {
+        background: white;
+        color: black;
+    }
+
+    section {
+        box-shadow: none;
+        border: 1px solid #ccc;
+        page-break-inside: avoid;
+    }
+}
