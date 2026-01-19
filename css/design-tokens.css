@@ -157,6 +157,8 @@
 
   --z-sticky: 100;
   --z-fixed: 1000;
+  --z-modal: 9999;
+  /* Ensure it is always on top */
   --container-max-width: 1200px;
   --content-max-width: 900px;
   /* Increased width for better centering */
