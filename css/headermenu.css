@@ -204,11 +204,11 @@ header.scrolled {
   .main-menu {
     /* Premium Mobile Menu Container */
     position: fixed;
-    top: 0;
+    top: 70px;
     right: 0;
     bottom: 0;
-    height: 100dvh;
-    /* Force full dynamic viewport height */
+    height: calc(100dvh - 70px);
+    /* Force full dynamic viewport height minus header */
     width: 85%;
     max-width: 360px;
 
@@ -223,8 +223,8 @@ header.scrolled {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 
-    padding: 100px var(--space-8) var(--space-8);
-    /* Reduced top padding */
+    padding: var(--space-8);
+    /* Reduced top padding since it is below header now */
 
     transform: translateX(100%);
     transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
