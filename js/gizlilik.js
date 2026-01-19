@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // İlk kez geliyorsa modalı göster
-    modal.style.display = "block";
+    modal.style.display = "flex";
 
     // Kabul edince kayıt yap
     acceptBtn.addEventListener("click", function () {
