@@ -152,10 +152,25 @@ header.scrolled {
 
 .hamburger {
   display: none;
-  background: none;
-  border: none;
+  background: var(--glass-bg);
+  /* Added background */
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+
   cursor: pointer;
   padding: var(--space-2);
+  margin-left: auto;
+  /* Ensure it pushes to the right if needed */
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+}
+
+.hamburger:hover {
+  background: var(--glass-bg-hover);
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-glow-primary);
 }
 
 .hamburger span {
@@ -214,6 +229,20 @@ header.scrolled {
   .main-menu a {
     font-size: var(--font-size-lg);
     display: block;
+    /* Added background for better visibility as requested */
+    background: rgba(255, 255, 255, 0.05);
+    padding: var(--space-4);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .main-menu a:hover,
+  .main-menu a:active {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+    padding-left: var(--space-6);
+    /* Slide effect */
   }
 
   .profile {
