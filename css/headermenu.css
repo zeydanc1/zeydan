@@ -200,53 +200,157 @@ header.scrolled {
     z-index: calc(var(--z-fixed) + 10);
   }
 
+  /* Premium Mobile Menu Container */
   .main-menu {
+    /* Premium Mobile Menu Container */
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
-    width: 80%;
-    max-width: 300px;
-    background: rgba(15, 23, 42, 0.95);
-    backdrop-filter: var(--glass-blur-strong);
+    height: 100dvh;
+    /* Force full dynamic viewport height */
+    width: 85%;
+    max-width: 360px;
+
+    /* Premium Background: Obsidian Base + Gold/Blue Mesh + Subtle Texture */
+    background-color: #0f172a;
+    background-image:
+      radial-gradient(circle at 100% 0%, rgba(251, 191, 36, 0.15) 0%, transparent 40%),
+      radial-gradient(circle at 0% 100%, rgba(59, 130, 246, 0.1) 0%, transparent 40%),
+      linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(10, 15, 30, 0.98)),
+      url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23fbbf24' fill-opacity='0.03' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
     padding: 100px var(--space-8) var(--space-8);
+    /* Reduced top padding */
+
     transform: translateX(100%);
-    transition: transform var(--transition-smooth);
-    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
-    border-left: 1px solid var(--glass-border);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    /* Elegant ease */
+
+    overflow-y: auto;
+    /* Enable scrolling */
+    max-width: 360px;
+    /* Increased width */
+
+    box-shadow: -20px 0 50px rgba(0, 0, 0, 0.7);
+    box-shadow: -20px 0 50px rgba(0, 0, 0, 0.7);
+    border: 2px solid var(--color-primary);
+    /* Full Surround Border */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* Start from top */
+    z-index: 1000;
   }
 
   .main-menu.active {
-    /* Toggled via JS */
     transform: translateX(0);
   }
 
   .main-menu ul {
     flex-direction: column;
-    gap: var(--space-6);
+    gap: var(--space-4);
+    width: 100%;
   }
 
+  /* Menu Items */
   .main-menu a {
-    font-size: var(--font-size-lg);
-    display: block;
-    /* Added background for better visibility as requested */
-    background: rgba(255, 255, 255, 0.05);
-    padding: var(--space-4);
-    border-radius: var(--radius-lg);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: var(--space-5) var(--space-6);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.02);
+    border-radius: var(--radius-xl);
+
+    opacity: 0;
+    transform: translateX(20px);
+    transition: all 0.3s ease;
   }
 
+  /* Staggered Animation for Items */
+  .main-menu.active a {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Delays for cascading effect */
+  .main-menu.active li:nth-child(1) a {
+    transition-delay: 0.1s;
+  }
+
+  .main-menu.active li:nth-child(2) a {
+    transition-delay: 0.15s;
+  }
+
+  .main-menu.active li:nth-child(3) a {
+    transition-delay: 0.2s;
+  }
+
+  .main-menu.active li:nth-child(4) a {
+    transition-delay: 0.25s;
+  }
+
+  .main-menu.active li:nth-child(5) a {
+    transition-delay: 0.3s;
+  }
+
+  .main-menu.active li:nth-child(6) a {
+    transition-delay: 0.35s;
+  }
+
+  .main-menu.active li:nth-child(7) a {
+    transition-delay: 0.4s;
+  }
+
+  .main-menu.active li:nth-child(8) a {
+    transition-delay: 0.45s;
+  }
+
+  /* Hover State */
   .main-menu a:hover,
   .main-menu a:active {
-    background: rgba(255, 255, 255, 0.1);
+    background: linear-gradient(90deg, rgba(251, 191, 36, 0.1), transparent);
+    border-color: rgba(251, 191, 36, 0.3);
     color: var(--color-primary);
-    border-color: var(--color-primary);
-    padding-left: var(--space-6);
-    /* Slide effect */
+    transform: translateX(10px);
+    /* Subtle slide forward */
+    box-shadow: 0 0 20px rgba(251, 191, 36, 0.1);
+  }
+
+  /* Remove the underline effect on mobile */
+  .main-menu a::after {
+    display: none;
+  }
+
+  /* Add arrow indicator */
+  .main-menu a::before {
+    content: '→';
+    font-size: 1rem;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+    color: var(--color-primary);
+    order: 2;
+    /* Put it on the right */
+  }
+
+  .main-menu a:hover::before {
+    opacity: 1;
+    transform: translateX(0);
   }
 
   .profile {
     display: none;
-    /* Hide profile on mobile header, or move inside menu */
   }
 }
