@@ -1,0 +1,250 @@
+﻿/**
+ * Basarilar (Achievements) Section - Premium Design
+ * ==================================================
+ * Uses design tokens from design-tokens.css
+ */
+
+#basarilar {
+  /* Base section styles from base.css */
+  max-width: var(--content-max-width);
+}
+
+#basarilar h2 {
+  /* Base h2 styles from base.css */
+  margin-bottom: var(--space-8);
+}
+
+/* ==================== ACHIEVEMENT LIST ==================== */
+
+.basari-listesi ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: var(--space-10);
+}
+
+.basari-listesi ul li {
+  /* Premium glassmorphism card */
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+
+  /* Border and radius */
+  border-left: 4px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--glass-border);
+  border-left: 4px solid var(--color-primary);
+
+  /* Spacing */
+  padding: var(--space-6);
+  margin-bottom: var(--space-6);
+
+  /* Typography */
+  line-height: var(--line-height-relaxed);
+  font-size: var(--font-size-md);
+  color: var(--color-text-secondary);
+
+  /* Premium shadows */
+  box-shadow: var(--shadow-lg);
+
+  /* Smooth transitions */
+  transition: var(--transition-smooth);
+
+  /* Entrance animation */
+  animation: slideInLeft var(--duration-slow) var(--ease-out);
+  animation-fill-mode: both;
+
+  position: relative;
+}
+
+/* Stagger animations */
+.basari-listesi ul li:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.basari-listesi ul li:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.basari-listesi ul li:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.basari-listesi ul li:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.basari-listesi ul li:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+/* Add icon/bullet with gradient */
+.basari-listesi ul li::before {
+  content: '✓';
+  position: absolute;
+  left: calc(-1 * var(--space-6));
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: var(--space-8);
+  height: var(--space-8);
+
+  background: none;
+  color: var(--color-bg-primary);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-glow-primary);
+
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-sm);
+
+  transition: var(--transition-normal);
+}
+
+/* Premium hover effect */
+.basari-listesi ul li:hover {
+  transform: translateX(8px) translateY(-3px);
+  box-shadow: var(--shadow-premium-hover);
+  background: var(--glass-bg-hover);
+  border-left-color: var(--color-primary-light);
+}
+
+.basari-listesi ul li:hover::before {
+  transform: translateY(-50%) scale(1.2) rotate(360deg);
+  box-shadow: var(--shadow-glow-primary-hover);
+}
+
+.basari-listesi ul li strong {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* ==================== ACHIEVEMENT LINKS ==================== */
+
+.basari-listesi ul li a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: var(--font-weight-semibold);
+  margin-left: var(--space-2);
+  padding-bottom: 2px;
+
+  border-bottom: 1.5px solid transparent;
+  transition: var(--transition-normal);
+
+  display: inline-block;
+  position: relative;
+}
+
+.basari-listesi ul li a:hover,
+.basari-listesi ul li a:focus {
+  color: var(--color-primary-light);
+  border-bottom-color: var(--color-primary-light);
+  outline: none;
+  text-shadow: var(--shadow-glow-primary);
+}
+
+/* ==================== EXTERNAL LINKS SECTION ==================== */
+
+.external-links {
+  margin-top: var(--space-10);
+}
+
+.external-links ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.external-links ul li {
+  /* Premium card */
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+
+  border-radius: var(--radius-md);
+  border: 1px solid var(--glass-border);
+
+  padding: var(--space-5);
+
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-normal);
+
+  animation: fadeInUp var(--duration-slow) var(--ease-out);
+  animation-fill-mode: both;
+}
+
+.external-links ul li:nth-child(1) {
+  animation-delay: 0.6s;
+}
+
+.external-links ul li:nth-child(2) {
+  animation-delay: 0.7s;
+}
+
+.external-links ul li:nth-child(3) {
+  animation-delay: 0.8s;
+}
+
+.external-links ul li:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+  background: var(--glass-bg-hover);
+}
+
+.external-links ul li a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-base);
+
+  display: block;
+  transition: var(--transition-fast);
+}
+
+.external-links ul li a:hover {
+  color: var(--color-primary-light);
+  transform: translateX(5px);
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+
+@media (max-width: 768px) {
+  .basari-listesi ul li {
+    font-size: var(--font-size-sm);
+    padding: var(--space-5);
+    margin-bottom: var(--space-5);
+  }
+
+  .basari-listesi ul li::before {
+    left: calc(-1 * var(--space-5));
+    width: var(--space-6);
+    height: var(--space-6);
+  }
+
+  .external-links ul li {
+    padding: var(--space-4);
+  }
+
+  .external-links ul li a {
+    font-size: var(--font-size-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .basari-listesi ul li {
+    font-size: var(--font-size-xs);
+    padding: var(--space-4);
+    margin-bottom: var(--space-4);
+    margin-left: var(--space-8);
+  }
+
+  .external-links ul li {
+    padding: var(--space-3);
+  }
+}

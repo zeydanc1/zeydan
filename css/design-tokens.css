@@ -1,0 +1,380 @@
+﻿/**
+ * Design Tokens - Premium Design System (Obsidian & Champagne)
+ * ============================================================
+ * Merkezi tasarım değişkenleri
+ */
+
+:root {
+  /* ==================== COLOR PALETTE ==================== */
+
+  /* Primary Colors - Champagne Gold */
+  --color-primary: #111827;
+  /* Rich Gold */
+  --color-primary-light: #7ba6f5;
+  /* Soft Gold */
+  --color-primary-dark: #4a7de0;
+  /* Bronze/Dark Gold */
+  --color-primary-glow: rgba(17, 24, 39, 0.15);
+
+  /* Secondary Colors - Muted Elegance */
+  --color-secondary: #64748b;
+  /* Slate Blue */
+  --color-secondary-light: #94a3b8;
+  --color-secondary-dark: #475569;
+
+  /* Background Colors - Obsidian & Deep Slate */
+  --color-bg-primary: #ffffff;
+  /* Deepest Obsidian */
+  --color-bg-secondary: #1e293b;
+  /* Dark Slate */
+  --color-bg-tertiary: #334155;
+  /* Lighter Slate for borders/inputs */
+  --color-bg-elevated: #1e293b;
+
+  /* Text Colors */
+  --color-text-primary: #f8fafc;
+  /* Crisp White */
+  --color-text-secondary: #cbd5e1;
+  /* Soft Gray */
+  --color-text-tertiary: #94a3b8;
+  /* Muted */
+  --color-text-muted: #64748b;
+
+  /* Border Colors */
+  --color-border-primary: #334155;
+  --color-border-secondary: rgba(255, 255, 255, 0.08);
+  --color-border-accent: rgba(17, 24, 39, 0.15);
+
+  /* State Colors */
+  --color-success: #10b981;
+  --color-warning: #5b8def;
+  --color-error: #ef4444;
+  --color-info: #3b82f6;
+
+  /* ==================== PREMIUM GRADIENTS ==================== */
+
+  /* Gold Luxury */
+  --gradient-gold: linear-gradient(135deg, #5b8def 0%, #4a7de0 100%);
+  --gradient-gold-hover: linear-gradient(135deg, #7ba6f5 0%, #5b8def 100%);
+
+  /* Obsidian Depth */
+  --gradient-obsidian: linear-gradient(180deg, rgba(15, 23, 42, 0) 0%, #0f172a 100%);
+  --gradient-card: linear-gradient(145deg, rgba(30, 41, 59, 0.7), rgba(15, 23, 42, 0.6));
+
+  /* Mesh/Atmospheric */
+  --gradient-mesh:
+    radial-gradient(at 0% 0%, rgba(17, 24, 39, 0.15) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(55, 65, 81, 0.05) 0px, transparent 50%);
+
+  /* ==================== GLASSMORPHISM 2.0 ==================== */
+
+  --glass-bg: rgba(30, 41, 59, 0.65);
+  --glass-bg-hover: rgba(51, 65, 85, 0.75);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-blur: blur(12px);
+  --glass-blur-strong: blur(24px);
+
+  /* ==================== SHADOWS ==================== */
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.15);
+
+  --shadow-premium:
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    0 10px 30px -5px rgba(0, 0, 0, 0.5);
+
+  --shadow-premium-hover:
+    0 0 0 1px var(--color-border-accent),
+    0 20px 40px -5px rgba(0, 0, 0, 0.6),
+    0 0 20px rgba(17, 24, 39, 0.15);
+
+  --shadow-glow-primary: 0 0 20px rgba(17, 24, 39, 0.15);
+
+  /* ==================== TYPOGRAPHY ==================== */
+
+  /* Modern Tech Stack */
+  --font-primary: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Outfit', 'Inter', sans-serif;
+  /* Setup for imports below */
+
+  /* Scale */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 2rem;
+  --font-size-4xl: 2.5rem;
+  --font-size-5xl: 3.5rem;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
+
+  --line-height-tight: 1.1;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+
+  --letter-spacing-wide: 0.025em;
+  --letter-spacing-wider: 0.05em;
+
+  /* ==================== SPACING ==================== */
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  /* ==================== BORDER RADIUS ==================== */
+
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  /* 8px */
+  --radius-lg: 0.75rem;
+  /* 12px */
+  --radius-xl: 1rem;
+  /* 16px */
+  --radius-2xl: 1.5rem;
+  /* 24px */
+  --radius-full: 9999px;
+
+  /* ==================== UTILS ==================== */
+
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  --z-sticky: 100;
+  --z-fixed: 1000;
+  --z-modal: 9999;
+  /* Ensure it is always on top */
+  --container-max-width: 1200px;
+  --content-max-width: 900px;
+  /* Increased width for better centering */
+  --header-height: 100px;
+  --header-height-mobile: 80px;
+}
+
+/* ==================== LIGHT MODE OVERRIDES ==================== */
+
+[data-theme="light"] {
+  /* Warm & Soft Backgrounds */
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f4f5f7;
+  --color-bg-tertiary: #eaecf0;
+  --color-bg-elevated: #ffffff;
+
+  /* Sophisticated Soft Typography */
+  --color-text-primary: #101828;
+  --color-text-secondary: #344054;
+  --color-text-tertiary: #475467;
+  --color-text-muted: #667085;
+
+  --color-border-primary: #eaecf0;
+  --color-border-secondary: rgba(0, 0, 0, 0.05);
+
+  /* Primary Colors overridden for Light mode: Royal Indigo / Warm Slate */
+  --color-primary: #4f46e5;
+  --color-primary-light: #6366f1;
+  --color-primary-dark: #3730a3;
+  --color-primary-glow: rgba(79, 70, 229, 0.25);
+  --color-border-accent: rgba(79, 70, 229, 0.3);
+
+  --gradient-gold: linear-gradient(135deg, #6366f1 0%, #3730a3 100%);
+  --gradient-gold-hover: linear-gradient(135deg, #818cf8 0%, #4f46e5 100%);
+
+  /* Fresh Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-bg-hover: rgba(255, 255, 255, 0.95);
+  --glass-border: rgba(0, 0, 0, 0.04);
+
+  --gradient-card: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(248, 250, 252, 0.8));
+
+  /* Feather-light Shadows */
+  --shadow-md: 0 4px 6px -1px rgba(16, 24, 40, 0.05), 0 2px 4px -1px rgba(16, 24, 40, 0.03);
+  --shadow-lg: 0 10px 15px -3px rgba(16, 24, 40, 0.05), 0 4px 6px -2px rgba(16, 24, 40, 0.02);
+  --shadow-premium: 0 0 0 1px rgba(16, 24, 40, 0.03), 0 12px 24px -4px rgba(16, 24, 40, 0.06);
+  --shadow-glow-primary: 0 0 20px rgba(79, 70, 229, 0.2);
+  --shadow-premium-hover: 0 0 0 1px var(--color-border-accent), 0 20px 32px -4px rgba(16, 24, 40, 0.08), 0 0 24px rgba(79, 70, 229, 0.15);
+  --btn-text-color: #ffffff;
+}
+
+/* Light mode header */
+[data-theme="light"] header {
+  background: rgba(248, 250, 252, 0.85);
+  border-bottom-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] header.scrolled {
+  background: rgba(248, 250, 252, 0.97);
+}
+
+/* Light mode body background - Warm White */
+[data-theme="light"] body {
+  background: var(--color-bg-primary);
+  background-image:
+    radial-gradient(circle at 15% 50%, rgba(79, 70, 229, 0.02), transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(99, 102, 241, 0.02), transparent 25%);
+  color: var(--color-text-primary);
+}
+
+/* Light mode mobile menu */
+[data-theme="light"] .main-menu {
+  background-color: #f8fafc;
+  background-image:
+    radial-gradient(circle at 100% 0%, rgba(17, 24, 39, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 0% 100%, rgba(55, 65, 81, 0.05) 0%, transparent 40%);
+}
+
+/* Theme toggle - DEVRE DIŞI (Sadece dark mod kullanılıyor) */
+#theme-toggle {
+  display: none !important;
+}
+
+/* ==================== LIGHT MODE - FOOTER ==================== */
+
+[data-theme="light"] footer {
+  
+  border-top-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] footer::before {
+  
+  box-shadow: 0 0 15px var(--color-primary);
+}
+
+[data-theme="light"] .footer-copy {
+  border-top-color: rgba(0, 0, 0, 0.07);
+}
+
+/* ==================== LIGHT MODE - MOBILE MENU ==================== */
+
+[data-theme="light"] .main-menu {
+  background-color: #f8fafc !important;
+  background-image:
+    radial-gradient(circle at 100% 0%, rgba(99, 102, 241, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 0% 100%, rgba(79, 70, 229, 0.05) 0%, transparent 40%) !important;
+  box-shadow: -20px 0 50px rgba(0, 0, 0, 0.12);
+  border-color: rgba(79, 70, 229, 0.25);
+}
+
+[data-theme="light"] .main-menu a {
+  background: rgba(0, 0, 0, 0.02);
+  border-color: rgba(0, 0, 0, 0.05);
+  color: var(--color-text-secondary);
+}
+
+[data-theme="light"] .main-menu a:hover,
+[data-theme="light"] .main-menu a:active {
+  
+  border-color: rgba(79, 70, 229, 0.25);
+  color: var(--color-primary);
+  box-shadow: 0 0 20px rgba(79, 70, 229, 0.08);
+}
+
+[data-theme="light"] .hamburger span {
+  background: var(--color-text-primary);
+}
+
+/* ==================== LIGHT MODE - HERO ==================== */
+
+/* Hero arka plan overlay — gündüz modunda çok parlak olmaması için */
+[data-theme="light"] .hero-bg-overlay {
+  background: rgba(248, 250, 252, 0.60);
+}
+
+/* Hero başlığı hardcode beyaz gradient yerine koyu/indigo */
+[data-theme="light"] .hero-title {
+  
+  
+  
+  
+  text-shadow: none !important;
+}
+
+/* Hero fotoğraf kenarlığı light modda */
+[data-theme="light"] .hero-profile-img {
+  border-color: #ffffff;
+}
+
+/* Hero dönen ışıklar light modda biraz daha soluk */
+[data-theme="light"] .hero-rotating-lights {
+  opacity: 0.4;
+}
+
+/* ==================== LIGHT MODE - SOCIAL BUTTONS ==================== */
+
+[data-theme="light"] .social-btn--email {
+  background: rgba(55, 65, 81, 0.07);
+  border-color: rgba(55, 65, 81, 0.2);
+  color: #374151;
+}
+
+[data-theme="light"] .social-btn--email .social-btn-icon {
+  background: rgba(55, 65, 81, 0.12);
+  color: #111827;
+}
+
+[data-theme="light"] .social-btn--email:hover {
+  border-color: rgba(55, 65, 81, 0.45);
+  color: #1e40af;
+}
+
+[data-theme="light"] .social-btn--facebook {
+  background: rgba(24, 119, 242, 0.07);
+  border-color: rgba(24, 119, 242, 0.2);
+  color: #1a56db;
+}
+
+[data-theme="light"] .social-btn--facebook .social-btn-icon {
+  background: rgba(24, 119, 242, 0.12);
+  color: #1a56db;
+}
+
+[data-theme="light"] .social-btn--facebook:hover {
+  border-color: rgba(24, 119, 242, 0.45);
+  color: #1e40af;
+}
+
+[data-theme="light"] .social-btn--instagram {
+  background: rgba(225, 48, 108, 0.06);
+  border-color: rgba(225, 48, 108, 0.2);
+  color: #be185d;
+}
+
+[data-theme="light"] .social-btn--instagram .social-btn-icon {
+  
+  color: #be185d;
+}
+
+[data-theme="light"] .social-btn--instagram:hover {
+  border-color: rgba(225, 48, 108, 0.4);
+  color: #9d174d;
+}
+
+[data-theme="light"] .social-btn--linkedin {
+  background: rgba(10, 102, 194, 0.07);
+  border-color: rgba(10, 102, 194, 0.2);
+  color: #374151;
+}
+
+[data-theme="light"] .social-btn--linkedin .social-btn-icon {
+  background: rgba(10, 102, 194, 0.12);
+  color: #1a56db;
+}
+
+[data-theme="light"] .social-btn--linkedin:hover {
+  border-color: rgba(10, 102, 194, 0.45);
+  color: #1e40af;
+}

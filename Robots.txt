@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://zeydanc1.github.io/zeydan//sitemap.xml

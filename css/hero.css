@@ -1,0 +1,185 @@
+﻿/**
+ * Hero Section — Clean Light Professional
+ * No rotating lights, no glow, no gradient text
+ */
+
+#hero {
+    position: relative;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+    padding: 10rem 5% 6rem;
+    overflow: hidden;
+    background: #f7f8fa;
+}
+
+/* Subtle geometric pattern background instead of rotating lights */
+#hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(circle at 1px 1px, rgba(0,0,0,0.03) 1px, transparent 0);
+    background-size: 40px 40px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Background photo — subtle and clean */
+#hero::after {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 45%;
+    height: 100%;
+    background-image: url('../images/teknofest2025.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.08;
+    z-index: 0;
+    -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.5) 0%, transparent 100%);
+    mask-image: linear-gradient(to left, rgba(0,0,0,0.5) 0%, transparent 100%);
+}
+
+.hero-content {
+    max-width: 650px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.hero-profile-wrapper {
+    position: relative;
+    margin-bottom: 1.5rem;
+    z-index: 2;
+}
+
+/* No gold glow behind profile */
+.hero-profile-wrapper::after {
+    display: none;
+}
+
+.hero-profile-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #e5e7eb;
+    object-fit: cover;
+    box-shadow: none;
+}
+
+/* Clean typography — no gradient text */
+.hero-title {
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+    color: #111827 !important;
+    
+    
+    
+    color: #111827 !important;
+    text-shadow: none !important;
+}
+
+.hero-subtitle {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #4b5563 !important;
+    -webkit-text-fill-color: #4b5563 !important;
+    margin-bottom: 2rem;
+    display: block;
+    letter-spacing: 0.02em;
+}
+
+/* Remove the decorative lines */
+.hero-subtitle::before,
+.hero-subtitle::after {
+    display: none;
+}
+
+.hero-desc {
+    font-size: 1rem;
+    max-width: 550px;
+    color: #6b7280;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+/* CTA Buttons */
+.hero-actions {
+    display: flex;
+    gap: 0.6rem;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.7rem 1.5rem;
+    font-weight: 600;
+    font-size: 0.88rem;
+    border-radius: 6px;
+    transition: all 0.2s;
+    text-decoration: none !important;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: #111827;
+    color: #fff !important;
+    box-shadow: none;
+}
+.btn-primary:hover {
+    background: #374151;
+}
+
+.btn-outline {
+    border: 1px solid #e5e7eb;
+    color: #374151 !important;
+    background: transparent;
+}
+.btn-outline:hover {
+    border-color: #9ca3af;
+}
+
+@keyframes pulseGlow {
+    0%, 100% { opacity: 0; }
+}
+
+/* No rotating background at all */
+@keyframes rotateBg {
+    from { transform: none; }
+    to { transform: none; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #hero {
+        justify-content: center;
+        text-align: center;
+        padding: 8rem 5% 4rem;
+    }
+    .hero-content {
+        align-items: center;
+    }
+    .hero-profile-img {
+        width: 70px;
+        height: 70px;
+    }
+    .hero-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+    .btn { width: 100%; }
+    #hero::after {
+        width: 100%;
+        opacity: 0.04;
+    }
+}

@@ -1,0 +1,159 @@
+﻿/**
+ * Gizlilik Politikasi - Premium Design (Obsidian & Champagne)
+ * ==========================================================
+ * Uses design tokens from design-tokens.css
+ */
+@import url('design-tokens.css');
+@import url('base.css');
+@import url('footer.css');
+@import url('dil.css');
+
+body {
+  background-color: var(--color-bg-primary);
+  background-image:
+    var(--gradient-mesh),
+    radial-gradient(circle at top center, rgba(15, 23, 42, 0.8), #0f172a);
+  color: var(--color-text-secondary);
+  font-family: var(--font-primary);
+  line-height: var(--line-height-relaxed);
+  margin: 0;
+  padding: var(--space-8) var(--space-4);
+}
+
+/* Ana İçerik Kutusu */
+.container {
+  max-width: 900px;
+  margin: var(--space-12) auto;
+
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+
+  padding: var(--space-10) var(--space-12);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-premium);
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* Shine Effect */
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
+}
+
+/* Ana Başlık */
+h1 {
+  text-align: center;
+  margin-bottom: var(--space-10);
+  font-family: var(--font-heading);
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+
+  /* Gradient text */
+  background: none;
+  
+  
+  
+
+  text-shadow: none;
+  position: relative;
+  padding-bottom: var(--space-4);
+}
+
+h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--color-primary);
+  border-radius: var(--radius-full);
+}
+
+/* Alt Başlıklar */
+h2 {
+  margin-top: var(--space-10);
+  margin-bottom: var(--space-4);
+  font-size: var(--font-size-2xl);
+  color: var(--color-primary);
+  border-bottom: 1px solid var(--color-border-secondary);
+  padding-bottom: var(--space-2);
+}
+
+/* Paragraflar */
+p {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-base);
+  margin-bottom: var(--space-4);
+}
+
+/* Listeler */
+ul {
+  padding-left: var(--space-6);
+  margin: var(--space-4) 0;
+  list-style: none;
+}
+
+ul li {
+  margin-bottom: var(--space-3);
+  color: var(--color-text-tertiary);
+  position: relative;
+  padding-left: var(--space-4);
+}
+
+ul li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+/* Linkler */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: var(--font-weight-semibold);
+  transition: var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-primary-light);
+  text-shadow: var(--shadow-glow-primary);
+  text-decoration: underline;
+}
+
+/* Sayfa Altı Footer override */
+.footer {
+  border-top: none;
+  background: transparent;
+  box-shadow: none;
+  margin-top: 0;
+  padding-top: var(--space-8);
+}
+
+/* Mobil Uyumluluk */
+@media (max-width: 768px) {
+  .container {
+    padding: var(--space-6) var(--space-5);
+    margin: var(--space-4) var(--space-2);
+  }
+
+  h1 {
+    font-size: var(--font-size-2xl);
+  }
+
+  h2 {
+    font-size: var(--font-size-xl);
+  }
+}

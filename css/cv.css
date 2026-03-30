@@ -1,0 +1,116 @@
+﻿/**
+ * CV Section - Premium Design
+ * ============================
+ * Uses design tokens from design-tokens.css
+ */
+
+#cv {
+  /* Base section styles from base.css */
+  max-width: var(--content-max-width);
+  text-align: center;
+}
+
+#cv h2 {
+  /* Base h2 styles from base.css */
+  margin-bottom: var(--space-6);
+}
+
+#cv p {
+  font-size: var(--font-size-md);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-8);
+  line-height: var(--line-height-relaxed);
+}
+
+/* ==================== DOWNLOAD BUTTON ==================== */
+
+#cv button {
+  /* Premium button styling */
+  display: inline-block;
+  margin: 0 auto;
+  padding: var(--space-5) var(--space-8);
+
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  font-family: var(--font-primary);
+
+  /* Premium gradient background */
+  background: none;
+  color: var(--color-bg-primary);
+
+  border: none;
+  border-radius: var(--radius-lg);
+
+  /* Premium shadow */
+  box-shadow: var(--shadow-premium);
+
+  cursor: pointer;
+  transition: var(--transition-smooth);
+
+  /* Ensure high contrast */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Add animated shine effect */
+#cv button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent);
+  transition: left var(--duration-slower) var(--ease-out);
+}
+
+/* Premium hover effect */
+#cv button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: var(--shadow-premium-hover) var(--shadow-glow-primary-hover);
+  filter: var(--filter-brightness-hover);
+}
+
+#cv button:hover::before {
+  left: 100%;
+}
+
+/* Active/pressed state */
+#cv button:active {
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Focus state for accessibility */
+#cv button:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 4px;
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+
+@media (max-width: 768px) {
+  #cv p {
+    font-size: var(--font-size-base);
+  }
+
+  #cv button {
+    padding: var(--space-4) var(--space-7);
+    font-size: var(--font-size-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  #cv p {
+    font-size: var(--font-size-sm);
+  }
+
+  #cv button {
+    padding: var(--space-3) var(--space-6);
+    width: 100%;
+    max-width: 280px;
+  }
+}

@@ -1,0 +1,350 @@
+/**
+ * Header & Navigation - Premium Design (Obsidian & Champagne)
+ * ===========================================================
+ * Uses design tokens from design-tokens.css
+ */
+
+/* ==================== HEADER BASE ==================== */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+
+  /* Ultra-Premium Glassmorphism */
+  background: rgba(15, 23, 42, 0.7);
+  /* Deep dark base */
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-bottom: 1px solid var(--glass-border);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-6);
+  /* Reduced padding to move items closer to edges */
+
+  z-index: var(--z-fixed);
+  transition: all var(--transition-normal);
+
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Scroll State (can be added via JS if needed, but base style is strong) */
+header.scrolled {
+  background: rgba(15, 23, 42, 0.9);
+  backdrop-filter: var(--glass-blur-strong);
+  box-shadow: var(--shadow-premium);
+}
+
+/* ==================== LOGO ==================== */
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.logo h1 {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-black);
+  margin: 0;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: #fff;
+  -webkit-text-fill-color: #fff;
+  text-shadow: none;
+}
+
+.logo p {
+  font-size: 0.75rem;
+  color: var(--color-text-tertiary);
+  margin: 4px 0 0 0;
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ==================== NAVIGATION ==================== */
+
+.main-menu ul {
+  display: flex;
+  list-style: none;
+  gap: var(--space-4);
+  margin: 0;
+  padding: 0;
+}
+
+.main-menu a {
+  position: relative;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  padding: var(--space-2) 0;
+  transition: color var(--transition-fast);
+  letter-spacing: 0.02em;
+}
+
+.main-menu a:hover {
+  color: var(--color-primary);
+}
+
+/* Animated Underline */
+.main-menu a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #111827;
+  transition: width var(--transition-normal);
+}
+
+.main-menu a:hover::after,
+.main-menu a.active::after {
+  width: 100%;
+}
+
+/* ==================== PROFILE AVATAR ==================== */
+
+.profile {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  padding: 2px;
+  margin-left: 5rem;
+  background: rgba(55, 65, 81, 0.5);
+  box-shadow: none;
+  cursor: pointer;
+  transition: transform var(--transition-normal);
+}
+
+.profile img {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  border: 2px solid var(--color-bg-primary);
+  /* Blend with bg */
+}
+
+.profile:hover {
+  transform: scale(1.05);
+}
+
+/* ==================== HAMBURGER (Mobile) ==================== */
+
+.hamburger {
+  display: none;
+  background: var(--glass-bg);
+  /* Added background */
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+
+  cursor: pointer;
+  padding: var(--space-2);
+  margin-left: auto;
+  /* Ensure it pushes to the right if needed */
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+}
+
+.hamburger:hover {
+  background: var(--glass-bg-hover);
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-glow-primary);
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--color-text-primary);
+  margin-bottom: 6px;
+  border-radius: 2px;
+  transition: transform var(--transition-normal), opacity var(--transition-normal);
+}
+
+.hamburger span:last-child {
+  margin-bottom: 0;
+}
+
+/* ==================== RESPONSIVE ==================== */
+
+@media (max-width: 900px) {
+  header {
+    height: 70px;
+    padding: 0 var(--space-4);
+  }
+
+  .hamburger {
+    display: block;
+    z-index: calc(var(--z-fixed) + 10);
+  }
+
+  /* Premium Mobile Menu Container */
+  .main-menu {
+    /* Premium Mobile Menu Container */
+    position: fixed;
+    top: 70px;
+    right: 0;
+    bottom: 0;
+    height: calc(100dvh - 70px);
+    /* Force full dynamic viewport height minus header */
+    width: 85%;
+    max-width: 360px;
+
+    /* Premium Background: Obsidian Base + Gold/Blue Mesh + Subtle Texture */
+    background-color: #ffffff;
+    background-image:
+      radial-gradient(circle at 100% 0%, rgba(17, 24, 39, 0.15) 0%, transparent 40%),
+      radial-gradient(circle at 0% 100%, rgba(55, 65, 81, 0.1) 0%, transparent 40%),
+      linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(10, 15, 30, 0.98)),
+      url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%235b8def' fill-opacity='0.03' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    padding: var(--space-8);
+    /* Reduced top padding since it is below header now */
+
+    transform: translateX(100%);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    /* Elegant ease */
+
+    overflow-y: auto;
+    /* Enable scrolling */
+    max-width: 360px;
+    /* Increased width */
+
+    box-shadow: -20px 0 50px rgba(0, 0, 0, 0.7);
+    box-shadow: -20px 0 50px rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(55, 65, 81, 0.3);
+    /* Full Surround Border */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* Start from top */
+    z-index: 1000;
+  }
+
+  .main-menu.active {
+    transform: translateX(0);
+  }
+
+  .main-menu ul {
+    flex-direction: column;
+    gap: var(--space-4);
+    width: 100%;
+  }
+
+  /* Menu Items */
+  .main-menu a {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: var(--space-5) var(--space-6);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.02);
+    border-radius: var(--radius-xl);
+
+    opacity: 0;
+    transform: translateX(20px);
+    transition: all 0.3s ease;
+  }
+
+  /* Staggered Animation for Items */
+  .main-menu.active a {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Delays for cascading effect */
+  .main-menu.active li:nth-child(1) a {
+    transition-delay: 0.1s;
+  }
+
+  .main-menu.active li:nth-child(2) a {
+    transition-delay: 0.15s;
+  }
+
+  .main-menu.active li:nth-child(3) a {
+    transition-delay: 0.2s;
+  }
+
+  .main-menu.active li:nth-child(4) a {
+    transition-delay: 0.25s;
+  }
+
+  .main-menu.active li:nth-child(5) a {
+    transition-delay: 0.3s;
+  }
+
+  .main-menu.active li:nth-child(6) a {
+    transition-delay: 0.35s;
+  }
+
+  .main-menu.active li:nth-child(7) a {
+    transition-delay: 0.4s;
+  }
+
+  .main-menu.active li:nth-child(8) a {
+    transition-delay: 0.45s;
+  }
+
+  /* Hover State */
+  .main-menu a:hover,
+  .main-menu a:active {
+    background: linear-gradient(90deg, rgba(55, 65, 81, 0.1), transparent);
+    border-color: rgba(55, 65, 81, 0.3);
+    color: var(--color-primary);
+    transform: translateX(10px);
+    box-shadow: none;
+  }
+
+  /* Remove the underline effect on mobile */
+  .main-menu a::after {
+    display: none;
+  }
+
+  /* Add arrow indicator */
+  .main-menu a::before {
+    content: '→';
+    font-size: 1rem;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+    color: var(--color-primary);
+    order: 2;
+    /* Put it on the right */
+  }
+
+  .main-menu a:hover::before {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .profile {
+    display: none;
+  }
+}/* Spacer fix for profile photo */
+header .profile {
+    margin-left: 3rem !important;
+}
+header .main-menu {
+    margin-right: 1.5rem !important;
+}

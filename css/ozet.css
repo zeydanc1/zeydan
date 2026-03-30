@@ -1,0 +1,50 @@
+﻿/**
+ * Ozet Section - Premium Design
+ * ==============================
+ * Uses design tokens from design-tokens.css
+ */
+
+#ozet {
+  /* Note: Base section styles are in base.css */
+  /* This file contains specific overrides for #ozet section */
+
+  /* Additional premium effects for ozet */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Add animated background gradient */
+#ozet::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-mesh);
+  opacity: 0.3;
+  z-index: 0;
+  pointer-events: none;
+  animation: gradientShift 15s ease infinite;
+  background-size: 200% 200%;
+}
+
+/* Ensure content is above the animated background */
+#ozet>* {
+  position: relative;
+  z-index: 1;
+}
+
+/* Specific text justification for this section */
+#ozet p {
+  text-align: center;
+  /* Changed from justify */
+  hyphens: auto;
+  max-width: 80ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Responsive overrides if needed */
+@media (max-width: 768px) {
+  #ozet p {
+    text-align: left;
+  }
+}

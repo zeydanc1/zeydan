@@ -1,0 +1,197 @@
+﻿/**
+ * Iletisim (Contact) Section - Premium Design
+ * ============================================
+ * Uses design tokens from design-tokens.css
+ */
+
+#iletisim {
+  /* Base section styles come from base.css */
+  /* This adds specific styles for contact section */
+  text-align: center;
+  position: relative;
+}
+
+#iletisim h2 {
+  /* Base h2 styles from base.css are applied */
+  margin-bottom: var(--space-4);
+}
+
+#iletisim>p {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--space-8);
+  color: var(--color-text-secondary);
+}
+
+/* ==================== CONTACT LIST ==================== */
+
+#iletisim ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 600px;
+  text-align: left;
+}
+
+#iletisim ul li {
+  font-size: var(--font-size-base);
+  margin-bottom: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+
+  /* Premium glassmorphism card */
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--glass-border);
+
+  /* Premium shadows */
+  box-shadow:
+    var(--shadow-inset),
+    var(--shadow-lg);
+
+  /* Layout */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+
+  /* Smooth transitions */
+  transition: var(--transition-smooth);
+
+  /* Add subtle animation on appearance */
+  animation: fadeInUp var(--duration-slow) var(--ease-out);
+  animation-fill-mode: both;
+}
+
+/* Stagger animation for list items */
+#iletisim ul li:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+#iletisim ul li:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+#iletisim ul li:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+#iletisim ul li:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+#iletisim ul li:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+/* Premium hover effect */
+#iletisim ul li:hover {
+  transform: translateY(-5px) scale(1.02);
+  background: var(--glass-bg-hover);
+
+  /* Enhanced shadows on hover */
+  box-shadow:
+    var(--shadow-inset-strong),
+    var(--shadow-premium-hover),
+    var(--shadow-glow-primary);
+
+  /* Subtle border glow */
+  border-color: var(--color-border-accent);
+}
+
+/* ==================== CONTACT LINKS ==================== */
+
+#iletisim ul li a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: var(--font-weight-semibold);
+  word-break: break-word;
+  transition: var(--transition-normal);
+  position: relative;
+
+  /* Add subtle glow effect */
+  text-shadow: var(--text-shadow-sm);
+}
+
+#iletisim ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: none;
+  transition: width var(--duration-normal) var(--ease-out);
+}
+
+#iletisim ul li a:hover,
+#iletisim ul li a:focus {
+  color: var(--color-primary-light);
+  text-decoration: none;
+  outline: none;
+  filter: var(--filter-brightness-hover);
+  text-shadow: var(--shadow-glow-primary);
+}
+
+#iletisim ul li a:hover::after {
+  width: 100%;
+}
+
+/* Optional: Email icon styling */
+#iletisim ul li strong {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
+  min-width: 100px;
+  display: inline-block;
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+
+@media (max-width: 768px) {
+  #iletisim>p {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-6);
+  }
+
+  #iletisim ul {
+    max-width: 90%;
+  }
+
+  #iletisim ul li {
+    font-size: var(--font-size-sm);
+    padding: var(--space-3) var(--space-4);
+    flex-wrap: wrap;
+  }
+
+  #iletisim ul li strong {
+    min-width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  #iletisim>p {
+    font-size: var(--font-size-base);
+  }
+
+  #iletisim ul {
+    max-width: 100%;
+  }
+
+  #iletisim ul li {
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: var(--font-size-xs);
+    padding: var(--space-3);
+    gap: var(--space-2);
+  }
+
+  #iletisim ul li a {
+    margin-top: var(--space-2);
+    font-size: var(--font-size-sm);
+  }
+
+  #iletisim ul li strong {
+    font-size: var(--font-size-sm);
+  }
+}

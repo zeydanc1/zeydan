@@ -1,0 +1,486 @@
+﻿/* ==========================================================
+ * ZEYDAN — CLEAN LIGHT PROFESSIONAL PORTFOLIO
+ * White background, minimal accents, corporate elegance
+ * ========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  /* Light Professional Palette */
+  --bg: #ffffff;
+  --bg-alt: #f7f8fa;
+  --surface: #ffffff;
+  --surface-raised: #f0f2f5;
+  --border: #e5e7eb;
+  --border-hover: #c7cad1;
+  --text: #1f2937;
+  --text-muted: #6b7280;
+  --text-light: #9ca3af;
+  --text-bright: #111827;
+  --accent: #111827;
+  --accent-hover: #374151;
+  --accent-soft: rgba(17, 24, 39, 0.06);
+  --radius: 8px;
+  --speed: 0.2s;
+
+  /* Compatibility */
+  --app-bg: var(--bg);
+  --app-surface: var(--surface);
+  --app-card: var(--surface);
+  --app-border: var(--border);
+  --app-text: var(--text);
+  --app-text-muted: var(--text-muted);
+  --app-primary: var(--accent);
+  --app-secondary: #4b5563;
+}
+
+/* ==================== BASE ==================== */
+body {
+  background: var(--bg) !important;
+  color: var(--text) !important;
+  font-family: 'Inter', system-ui, sans-serif !important;
+  line-height: 1.7 !important;
+  margin: 0; padding: 0; overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  color: var(--text-bright) !important;
+  font-weight: 700 !important;
+}
+
+p {
+  color: var(--text-muted) !important;
+  font-size: 0.95rem !important;
+  line-height: 1.8 !important;
+}
+
+a { text-decoration: none; color: var(--accent); }
+
+/* ==================== HEADER ==================== */
+header {
+  background: rgba(255, 255, 255, 0.92) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border-bottom: 1px solid var(--border) !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04) !important;
+}
+nav.main-menu ul li a {
+  color: var(--text-muted) !important;
+  font-weight: 500 !important;
+  font-size: 0.85rem !important;
+}
+nav.main-menu ul li a:hover { color: var(--accent) !important; }
+
+/* Logo override for light theme */
+.logo h1 {
+  color: var(--text-bright) !important;
+  -webkit-text-fill-color: var(--text-bright) !important;
+  text-shadow: none !important;
+  background: none !important;
+}
+.logo p {
+  color: var(--text-muted) !important;
+}
+
+/* Profile ring light */
+.profile {
+  background: var(--border) !important;
+  box-shadow: none !important;
+}
+
+/* ==================== HERO — LEFT ALIGNED, CLEAN ==================== */
+.modern-hero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  padding: 10rem 2rem 6rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: left;
+  background: var(--bg) !important;
+}
+
+.hero-glow-1, .hero-glow-2 { display: none; }
+
+.hero-content {
+  max-width: 620px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero-profile-container { margin-bottom: 2rem; }
+
+.hero-profile-img {
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  object-fit: cover;
+}
+
+.hero-title {
+  font-size: clamp(2rem, 4vw, 3.2rem) !important;
+  font-weight: 800 !important;
+  color: var(--text-bright) !important;
+  line-height: 1.2 !important;
+  margin-bottom: 1rem !important;
+  letter-spacing: -0.02em !important;
+}
+
+.hero-title-highlight {
+  color: var(--accent);
+}
+
+.hero-subtitle {
+  font-size: 1rem !important;
+  color: var(--text-muted) !important;
+  margin: 0 0 2rem 0 !important;
+  line-height: 1.6 !important;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .modern-hero { padding: 8rem 1.5rem 4rem; text-align: center; min-height: auto; }
+  .hero-content { align-items: center; }
+}
+
+/* ==================== BUTTONS ==================== */
+.btn-modern-primary {
+  background: var(--accent);
+  color: #fff !important;
+  font-weight: 600;
+  padding: 0.65rem 1.4rem;
+  border-radius: var(--radius);
+  font-size: 0.88rem;
+  border: none; cursor: pointer;
+  transition: background var(--speed);
+  display: inline-flex; align-items: center; gap: 0.3rem;
+}
+.btn-modern-primary:hover { background: var(--accent-hover); }
+
+.btn-modern-secondary {
+  background: transparent;
+  color: var(--text) !important;
+  font-weight: 600;
+  padding: 0.65rem 1.4rem;
+  border-radius: var(--radius);
+  font-size: 0.88rem;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: all var(--speed);
+}
+.btn-modern-secondary:hover {
+  border-color: var(--text-muted);
+}
+
+/* ==================== SECTIONS ==================== */
+.modern-section {
+  padding: 5rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Alternating soft gray backgrounds */
+.modern-section:nth-child(even) {
+  background: var(--bg-alt);
+  max-width: 100%;
+  padding-left: calc((100% - 1100px) / 2 + 2rem);
+  padding-right: calc((100% - 1100px) / 2 + 2rem);
+}
+
+.section-head {
+  margin-bottom: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.section-tag {
+  color: var(--accent);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.section-head h2 {
+  font-size: 1.8rem !important;
+  margin: 0 !important;
+  font-weight: 700 !important;
+  color: var(--text-bright) !important;
+}
+
+@media (max-width: 768px) {
+  .modern-section { padding: 3.5rem 1.25rem; }
+  .section-head h2 { font-size: 1.5rem !important; }
+}
+
+/* ==================== GRID ==================== */
+.modern-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+@media (max-width: 640px) { .modern-grid { grid-template-columns: 1fr; } }
+
+/* ==================== CARDS ==================== */
+.modern-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  transition: border-color var(--speed), box-shadow var(--speed);
+  display: flex;
+  flex-direction: column;
+}
+
+.modern-card:hover {
+  border-color: var(--border-hover);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* Featured Card */
+.modern-card.card-featured {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  border-left: 3px solid var(--accent);
+}
+@media (max-width: 900px) {
+  .modern-card.card-featured { grid-template-columns: 1fr; gap: 1.5rem; }
+}
+
+.card-title {
+  font-size: 1.05rem !important;
+  color: var(--text-bright) !important;
+  margin-bottom: 0.4rem !important;
+  line-height: 1.35 !important;
+  font-weight: 600 !important;
+}
+
+.card-desc {
+  color: var(--text-muted) !important;
+  margin-bottom: 1.25rem !important;
+  font-size: 0.88rem !important;
+  line-height: 1.7 !important;
+}
+
+.card-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: auto; }
+.card-tags span {
+  background: var(--surface-raised);
+  border: none;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+/* ==================== ABOUT ==================== */
+.about-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2.5rem;
+  font-size: 0.95rem !important;
+  color: var(--text-muted) !important;
+  line-height: 1.85 !important;
+  max-width: 800px;
+  text-align: left;
+  border-left: 3px solid var(--accent);
+}
+.about-box p { margin-bottom: 1rem !important; color: var(--text) !important; }
+.about-box p:last-child { margin-bottom: 0 !important; }
+
+/* ==================== SKILLS ==================== */
+.skill-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}
+.skill-box h3 {
+  color: var(--text-bright);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border);
+}
+.skill-row { margin-bottom: 0.7rem; }
+.skill-row:last-child { margin-bottom: 0; }
+.skill-meta {
+  display: flex; justify-content: space-between;
+  margin-bottom: 0.3rem;
+  font-size: 0.8rem; font-weight: 500;
+  color: var(--text-muted);
+}
+.skill-bar {
+  height: 4px;
+  background: var(--surface-raised);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.skill-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+/* ==================== FOOTER ==================== */
+footer {
+  background: var(--bg-alt) !important;
+  padding: 3rem 2rem !important;
+  text-align: center !important;
+  border-top: 1px solid var(--border) !important;
+}
+.footer-name h2 {
+  color: var(--text-bright) !important;
+  margin-bottom: 0.3rem !important;
+  font-size: 1.05rem !important;
+}
+.footer-copy {
+  margin-top: 1rem !important;
+  font-size: 0.78rem !important;
+  color: var(--text-light) !important;
+}
+footer a { color: var(--text-muted) !important; }
+footer a:hover { color: var(--accent) !important; }
+
+/* ==================== CONTACT CARDS — LIGHT OVERRIDE ==================== */
+#iletisim .modern-card h3 { color: var(--text-bright) !important; }
+#iletisim .modern-card p { color: var(--text-muted) !important; }
+
+/* ==================== CV BOX ==================== */
+#cv {
+  background: var(--bg-alt) !important;
+  border-radius: var(--radius) !important;
+  border-color: var(--border) !important;
+}
+#cv h3 { color: var(--text-bright) !important; }
+#cv p { color: var(--text-muted) !important; }
+
+/* ==================== MODAL ==================== */
+.modal {
+  display: none; position: fixed; inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 9999;
+}
+.modal.show { display: flex; align-items: center; justify-content: center; }
+.modal-inner {
+  position: relative; width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center; padding: 2rem;
+}
+.modal img, .modal-content {
+  max-width: 85vw; max-height: 80vh;
+  border-radius: var(--radius);
+  object-fit: contain;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+.close {
+  position: absolute; top: 1.25rem; right: 1.5rem;
+  font-size: 1.8rem; color: #fff; cursor: pointer;
+  width: 2.5rem; height: 2.5rem;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(0,0,0,0.5); border-radius: var(--radius);
+  border: none; transition: all var(--speed);
+}
+.close:hover { background: rgba(0,0,0,0.7); }
+.arrow {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  font-size: 1.5rem; color: #fff; cursor: pointer; user-select: none;
+  width: 2.5rem; height: 2.5rem;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(0,0,0,0.5); border-radius: var(--radius);
+  border: none; transition: all var(--speed);
+}
+.arrow:hover { background: rgba(0,0,0,0.7); }
+.arrow.left { left: 1rem; }
+.arrow.right { right: 1rem; }
+@media (max-width: 768px) {
+  .modal img, .modal-content { max-width: 95vw; max-height: 70vh; }
+}
+
+/* ==================== GALLERY IMAGES ==================== */
+.modern-card .zoomable-img { cursor: zoom-in; }
+
+/* ==================== SCROLLBAR ==================== */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #9ca3af; }
+
+/* ==================== SELECTION ==================== */
+::selection { background: var(--accent); color: #fff; }
+
+/* ==================== COOKIE BANNER LIGHT ==================== */
+.cookie-banner {
+  background: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  color: var(--text) !important;
+}
+.cookie-banner h3 { color: var(--text-bright) !important; }
+.cookie-banner p { color: var(--text-muted) !important; }
+
+/* ==================== BUTTON FIXES ==================== */
+/* Cerez Tercihi banner butonlari */
+.btn-cookie-outline, .cookie-banner .btn-cookie-outline {
+  color: #111827 !important;
+  border: 1px solid #111827 !important;
+  font-weight: 700 !important;
+  background: transparent !important;
+}
+.btn-cookie-outline:hover, .cookie-banner .btn-cookie-outline:hover {
+  background: #f3f4f6 !important;
+}
+
+.btn-cookie-primary, .cookie-banner .btn-cookie-primary {
+  background: #111827 !important;
+  color: #ffffff !important;
+  border: none !important;
+  font-weight: 700 !important;
+}
+.btn-cookie-primary:hover, .cookie-banner .btn-cookie-primary:hover {
+  background: #374151 !important;
+}
+
+/* CV İndir butonlari veya diger standart butonlar */
+.cv-action .btn, #cv .btn, .btn, .btn-primary, .btn-outline {
+  color: #111827 !important;
+}
+.btn-primary, .cv-action .btn-primary {
+  background: #111827 !important;
+  color: #ffffff !important;
+  border-color: #111827 !important;
+}
+.btn-outline, .cv-action .btn-outline {
+  border: 2px solid #111827 !important;
+  color: #111827 !important;
+  background: transparent !important;
+}
+/* Fix specifically for cv buttons */
+.btn-modern-primary, #cv button.btn-modern-primary {
+    color: #ffffff !important;
+    background: #111827 !important;
+    border: none !important;
+}
+.btn-modern-secondary, a.btn-modern-secondary {
+    color: #111827 !important;
+    border: 1px solid #111827 !important;
+    background: transparent !important;
+}
+.btn-modern-secondary:hover {
+    background: #f3f4f6 !important;
+}

@@ -1,0 +1,159 @@
+﻿/**
+ * Akademik Yayinlar (Academic Publications) - Premium Design
+ * ===========================================================
+ */
+
+#akademik-yayinlar {
+  max-width: var(--content-max-width);
+}
+
+#akademik-yayinlar h2 {
+  margin-bottom: var(--space-8);
+}
+
+/* ==================== ARTICLE CARDS ==================== */
+
+#akademik-yayinlar article {
+  /* Premium glassmorphism card */
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+
+  /* Refined Border */
+  border: 1px solid var(--glass-border);
+  border-left: 3px solid var(--color-primary);
+  border-radius: var(--radius-lg);
+
+  /* Premium shadows */
+  box-shadow:
+    var(--shadow-lg),
+    inset 0 1px rgba(255, 255, 255, 0.1);
+
+  /* Spacing */
+  padding: var(--space-7) var(--space-6);
+  margin-bottom: var(--space-8);
+
+  /* Typography */
+  color: var(--color-text-secondary);
+
+  /* Smooth transitions */
+  transition: var(--transition-smooth);
+
+  /* Add entrance animation */
+  animation: fadeInUp var(--duration-slow) var(--ease-out);
+  animation-fill-mode: both;
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* Stagger animation */
+#akademik-yayinlar article:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+#akademik-yayinlar article:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+#akademik-yayinlar article:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+/* Add gradient overlay that expands on hover */
+#akademik-yayinlar article::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  background: var(--gradient-accent);
+  opacity: 0.05;
+  transition: width var(--duration-slow) var(--ease-out);
+}
+
+/* Premium hover effect */
+#akademik-yayinlar article:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    var(--shadow-premium-hover),
+    var(--shadow-glow-primary);
+  background: var(--glass-bg-hover);
+  border-left-color: var(--color-primary-light);
+  border-color: var(--color-border-accent);
+}
+
+#akademik-yayinlar article:hover::before {
+  width: 100%;
+}
+
+/* ==================== ARTICLE HEADINGS ==================== */
+
+#akademik-yayinlar article h3 {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+  margin-bottom: var(--space-4);
+  line-height: var(--line-height-tight);
+
+  /* Gradient text effect */
+  background: none;
+  
+  
+  
+
+  transition: var(--transition-normal);
+}
+
+#akademik-yayinlar article:hover h3 {
+  filter: var(--filter-brightness-hover);
+  transform: translateX(5px);
+}
+
+/* ==================== ARTICLE PARAGRAPHS ==================== */
+
+#akademik-yayinlar article p {
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-relaxed);
+  margin: var(--space-2) 0;
+  color: var(--color-text-secondary);
+}
+
+#akademik-yayinlar article p strong {
+  color: var(--color-primary-light);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+
+@media (max-width: 768px) {
+  #akademik-yayinlar article {
+    padding: var(--space-6) var(--space-5);
+    margin-bottom: var(--space-6);
+  }
+
+  #akademik-yayinlar article h3 {
+    font-size: var(--font-size-xl);
+  }
+
+  #akademik-yayinlar article p {
+    font-size: var(--font-size-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  #akademik-yayinlar article {
+    padding: var(--space-5) var(--space-4);
+    margin-bottom: var(--space-5);
+    border-left-width: 3px;
+  }
+
+  #akademik-yayinlar article h3 {
+    font-size: var(--font-size-lg);
+  }
+
+  #akademik-yayinlar article p {
+    font-size: var(--font-size-xs);
+  }
+}
