@@ -52,6 +52,7 @@
   <link rel="stylesheet" href="css/headermenu.css" />
   <link rel="stylesheet" href="css/teknofest2025.css" />
   <link rel="stylesheet" href="css/premium-light.css" />
+  <link rel="stylesheet" href="css/terminal-marquee.css" />
 
   <script>
     localStorage.removeItem('theme');
@@ -215,6 +216,9 @@
   </header>
 
     <main>
+  
+
+
   <!-- HERO -->
   <section id="hero" class="modern-hero">
     <div class="hero-content">
@@ -222,13 +226,35 @@
         <img src="images/zeydan.jpg" alt="Zeydan Çalışkan" class="hero-profile-img">
       </div>
       <h1 class="hero-title">Zeydan Çalışkan</h1>
-      <p class="hero-subtitle">Siber Güvenlik • Psikoloji • Yazılım Mühendisliği • İnsan-Bilgisayar Etkileşimi</p>
+      <p class="hero-subtitle">Siber Güvenlik • Psikoloji • Yazılım Mühendisliği</p>
       <div class="hero-buttons">
         <a href="#calismalar" class="btn-modern-primary">Projelerimi Gör</a>
         <a href="#cv" class="btn-modern-secondary">Özgeçmiş (CV)</a>
       </div>
     </div>
   </section>
+
+  <!-- INFINITE MARQUEE -->
+  <div class="marquee-container" style="margin-top: -2rem; padding: 1.5rem 0;">
+    <div class="marquee-content">
+      <!-- Item list duplicated for seamless looping -->
+      <div class="marquee-item">PYTHON <span class="marquee-separator">•</span></div>
+      <div class="marquee-item">C++ <span class="marquee-separator">•</span></div>
+      <div class="marquee-item">SİBER GÜVENLİK <span class="marquee-separator">•</span></div>
+      <div class="marquee-item">FİGMA <span class="marquee-separator">•</span></div>
+      <div class="marquee-item">HTML / CSS / JS <span class="marquee-separator">•</span></div>
+      <div class="marquee-item">PROBLEM ÇÖZME <span class="marquee-separator">•</span></div>
+      <div class="marquee-item">KALİ LİNUX <span class="marquee-separator">•</span></div>
+      
+      <div class="marquee-item">PYTHON <span class="marquee-separator">•</span></div>
+      <div class="marquee-item">C++ <span class="marquee-separator">•</span></div>
+      <div class="marquee-item">SİBER GÜVENLİK <span class="marquee-separator">•</span></div>
+      <div class="marquee-item">FİGMA <span class="marquee-separator">•</span></div>
+      <div class="marquee-item">HTML / CSS / JS <span class="marquee-separator">•</span></div>
+      <div class="marquee-item">PROBLEM ÇÖZME <span class="marquee-separator">•</span></div>
+      <div class="marquee-item">KALİ LİNUX <span class="marquee-separator">•</span></div>
+    </div>
+  </div>
 
   <!-- HAKKIMDA -->
   <section id="ozet" class="modern-section">
@@ -238,9 +264,11 @@
     </div>
     <div class="about-box">
       <p style="color: #fff; font-weight: 500;">Zeydan Çalışkan, 15 Kasım 2000 tarihinde Türkiye'de doğmuş olup, Lefkoşa, KKTC'de ikamet etmektedir.</p>
-      <p>Uluslararası Kıbrıs Üniversitesi Yazılım Mühendisliği Bölümü'nde lisans öğrenimine devam eden Çalışkan; <strong>siber güvenlik, ağ analizi ve sızma testleri</strong> alanlarında uygulamalı projeler yürütürken eş zamanlı olarak <em>duygusal zeka</em>, <em>insan-bilgisayar etkileşimi</em> ve <em>kültürel psikoloji</em> üzerine akademik araştırmalar yapmaktadır. Temel amacı, sistemlerin sadece donanımsal ve ağ güvenliği tarafını inşa etmekle kalmayıpta, bireylerin bilişsel ve duygusal süreçlerini de gözeterek insan merkezli bir ekosisteme bilimsel katkı sunmaktır.</p>
+      <p>Uluslararası Kıbrıs Üniversitesi Yazılım Mühendisliği Bölümü'nde lisans öğrenimine devam eden Çalışkan; <strong>siber güvenlik, ağ analizi ve sızma testleri</strong> alanlarında uygulamalı projeler yürütürken eş zamanlı olarak <em>duygusal zeka</em> ve <em>kültürel psikoloji</em> üzerine akademik araştırmalar yapmaktadır. Temel amacı, sistemlerin sadece donanımsal ve ağ güvenliği tarafını inşa etmekle kalmayıpta, bireylerin bilişsel ve duygusal süreçlerini de gözeterek insan merkezli bir ekosisteme bilimsel katkı sunmaktır.</p>
       <p>Ağ güvenliği ile gizlilik temellerinin yanı sıra teknoloji ve dil etkileşimleri konusunda kendini geliştirmekte; yazılımın katı kurallarını sosyoloji ve psikoloji dallarıyla sentezleyen çok disiplinli projelere odaklanmaktadır.</p>
     </div>
+    
+
   </section>
 
   <!-- PROJELER -->
@@ -613,6 +641,37 @@
     </div>
   </div>
   <script src="js/modal.js"></script>
+  <script src="js/terminal.js"></script>
+  
+  <!-- INTERACTIVE TERMINAL -->
+  <div class="terminal-wrapper">
+    <div class="terminal-header" title="Minimize / Expand Terminal">
+      <div class="terminal-buttons">
+        <div class="term-btn red"></div>
+        <div class="term-btn yellow"></div>
+        <div class="term-btn green"></div>
+      </div>
+      <div class="terminal-title">guest@zeydan.dev:~</div>
+    </div>
+    <div class="terminal-body" id="term-history">
+      <div class="terminal-output">
+          Loading zeydanOS 1.0.4...<br>
+          Zeydan'ın interaktif terminaline hoş geldiniz.<br>
+          Komutları görmek için <span class='term-accent'>help</span> yazabilirsiniz.
+      </div>
+      <br>
+    </div>
+    <div class="terminal-input-line" style="padding: 0 1.5rem 1.5rem 1.5rem;">
+        <span class="term-prompt">guest<span>@</span>zeydan.dev:~$</span>
+        <form id="term-form">
+            <input type="text" id="cmd-input" class="term-input" autocomplete="off" spellcheck="false">
+        </form>
+    </div>
+  </div>
+  
+  <!-- Terminal Toggle Button -->
+  <button id="term-toggle-btn" class="terminal-toggle-btn" title="Open Terminal">_&gt;</button>
+
 </body>
 
 </html>

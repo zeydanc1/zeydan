@@ -154,6 +154,7 @@
   <link rel="stylesheet" href="css/headermenu.css" />
   <link rel="stylesheet" href="css/teknofest2025.css" />
   <link rel="stylesheet" href="css/premium-light.css" />
+  <link rel="stylesheet" href="css/terminal-marquee.css" />
 
   <script>
     localStorage.removeItem('theme');
@@ -201,6 +202,9 @@
   </header>
 
     <main>
+  
+
+
   <!-- HERO -->
   <section id="hero" class="modern-hero">
     <div class="hero-content">
@@ -208,13 +212,34 @@
         <img src="images/zeydan.jpg" alt="Zeydan Çalışkan" class="hero-profile-img">
       </div>
       <h1 class="hero-title">Zeydan Çalışkan</h1>
-      <p class="hero-subtitle">Cyber Security • Psychology • Software Engineering • Human-Computer Interaction</p>
+      <p class="hero-subtitle">Cyber Security • Psychology • Software Engineering</p>
       <div class="hero-buttons">
         <a href="#calismalar" class="btn-modern-primary">View Projects</a>
         <a href="#cv" class="btn-modern-secondary">Resume (CV)</a>
       </div>
     </div>
   </section>
+
+  <!-- INFINITE MARQUEE -->
+  <div class="marquee-container" style="margin-top: -2rem; padding: 1.5rem 0;">
+    <div class="marquee-content">
+      <div class="marquee-item">PYTHON <span class="marquee-separator">•</span></div>
+      <div class="marquee-item">C++ <span class="marquee-separator">•</span></div>
+      <div class="marquee-item">CYBER SECURITY <span class="marquee-separator">•</span></div>
+      <div class="marquee-item">FIGMA <span class="marquee-separator">•</span></div>
+      <div class="marquee-item">HTML / CSS / JS <span class="marquee-separator">•</span></div>
+      <div class="marquee-item">PROBLEM SOLVING <span class="marquee-separator">•</span></div>
+      <div class="marquee-item">KALI LINUX <span class="marquee-separator">•</span></div>
+      
+      <div class="marquee-item">PYTHON <span class="marquee-separator">•</span></div>
+      <div class="marquee-item">C++ <span class="marquee-separator">•</span></div>
+      <div class="marquee-item">CYBER SECURITY <span class="marquee-separator">•</span></div>
+      <div class="marquee-item">FIGMA <span class="marquee-separator">•</span></div>
+      <div class="marquee-item">HTML / CSS / JS <span class="marquee-separator">•</span></div>
+      <div class="marquee-item">PROBLEM SOLVING <span class="marquee-separator">•</span></div>
+      <div class="marquee-item">KALI LINUX <span class="marquee-separator">•</span></div>
+    </div>
+  </div>
 
   <!-- HAKKIMDA -->
   <section id="ozet" class="modern-section">
@@ -224,9 +249,11 @@
     </div>
     <div class="about-box">
       <p style="color: #fff; font-weight: 500;">Zeydan Çalışkan was born on November 15, 2000, in Turkey, and currently resides in Nicosia, TRNC.</p>
-      <p>Pursuing his undergraduate studies in Software Engineering at Cyprus International University, he conducts practical projects in <strong>cyber security, network analysis, and penetration testing</strong> while simultaneously researching <em>emotional intelligence</em>, <em>human-computer interaction</em>, and <em>cultural psychology</em>. His primary goal is to not only build the hardware and network security side of systems, but also contribute scientifically to a human-centered ecosystem by considering the cognitive and emotional processes of individuals.</p>
+      <p>Pursuing his undergraduate studies in Software Engineering at Cyprus International University, he conducts practical projects in <strong>cyber security, network analysis, and penetration testing</strong> while simultaneously researching <em>emotional intelligence</em> and <em>cultural psychology</em>. His primary goal is to not only build the hardware and network security side of systems, but also contribute scientifically to a human-centered ecosystem by considering the cognitive and emotional processes of individuals.</p>
       <p>In addition to advancing his skills in network security and privacy fundamentals, he focuses on multidisciplinary projects where the strict rules of software are synthesized with sociology and psychology.</p>
     </div>
+    
+
   </section>
 
   <!-- PROJELER -->
@@ -570,6 +597,37 @@
     </div>
   </div>
   <script src="js/modal.js"></script>
+  <script src="js/terminal.js"></script>
+
+  <!-- INTERACTIVE TERMINAL -->
+  <div class="terminal-wrapper">
+    <div class="terminal-header" title="Minimize / Expand Terminal">
+      <div class="terminal-buttons">
+        <div class="term-btn red"></div>
+        <div class="term-btn yellow"></div>
+        <div class="term-btn green"></div>
+      </div>
+      <div class="terminal-title">guest@zeydan.dev:~</div>
+    </div>
+    <div class="terminal-body" id="term-history">
+      <div class="terminal-output">
+          Loading zeydanOS 1.0.4...<br>
+          Welcome to Zeydan's Interactive Terminal.<br>
+          Type <span class='term-accent'>help</span> to see available commands.
+      </div>
+      <br>
+    </div>
+    <div class="terminal-input-line" style="padding: 0 1.5rem 1.5rem 1.5rem;">
+        <span class="term-prompt">guest<span>@</span>zeydan.dev:~$</span>
+        <form id="term-form">
+            <input type="text" id="cmd-input" class="term-input" autocomplete="off" spellcheck="false">
+        </form>
+    </div>
+  </div>
+  
+  <!-- Terminal Toggle Button -->
+  <button id="term-toggle-btn" class="terminal-toggle-btn" title="Open Terminal">_&gt;</button>
+
 </body>
 
 </html>

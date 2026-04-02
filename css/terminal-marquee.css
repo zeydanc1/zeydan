@@ -1,0 +1,420 @@
+/* ==========================================================
+ * ZEYDAN — TERMINAL & MARQUEE COMPONENTS CSS
+ * ========================================================== */
+
+/* ==================== INFINITE MARQUEE ==================== */
+.marquee-container {
+    width: 100vw;
+    max-width: 100%;
+    overflow: hidden;
+    background: var(--surface-raised, #f0f2f5);
+    border-top: 1px solid var(--border, #e5e7eb);
+    border-bottom: 1px solid var(--border, #e5e7eb);
+    padding: 1.25rem 0;
+    position: relative;
+    /* Optional: shadow box mask for smooth edges */
+    -webkit-mask-image: linear-gradient(90deg, transparent, #fff 10%, #fff 90%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #fff 10%, #fff 90%, transparent);
+}
+
+.marquee-content {
+    display: flex;
+    white-space: nowrap;
+    width: fit-content;
+    animation: marquee-scroll 25s linear infinite;
+    gap: 3rem;
+    padding-left: 3rem; 
+}
+
+/* Pause animation on hover for better UX */
+.marquee-container:hover .marquee-content {
+    animation-play-state: paused;
+}
+
+.marquee-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--text-muted, #6b7280);
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.marquee-item:hover {
+    color: var(--text-bright, #111827);
+}
+
+.marquee-separator {
+    color: var(--text-light, #9ca3af);
+    font-size: 1.2rem;
+    user-select: none;
+}
+
+@keyframes marquee-scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* This translates by 50% of the entire content width.
+           Because we duplicate the list inside, it will act infinite. */
+        transform: translateX(-50%);
+    }
+}
+
+/* ==================== INTERACTIVE TERMINAL — PREMIUM v2.0 ==================== */
+
+.terminal-wrapper {
+    position: fixed;
+    bottom: 5rem;
+    right: 2rem;
+    z-index: 9999;
+    background: linear-gradient(165deg, #0c1222 0%, #0a0f1e 40%, #0d1429 100%);
+    border-radius: 16px;
+    box-shadow:
+        0 25px 60px -15px rgba(0, 0, 0, 0.65),
+        0 0 0 1px rgba(56, 189, 248, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(56, 189, 248, 0.12);
+    overflow: hidden;
+    width: 100%;
+    max-width: 480px;
+    margin: 0;
+    font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', Courier, monospace;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(24px) scale(0.97);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    transform-origin: bottom right;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+/* Active State */
+.terminal-wrapper.show-terminal {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+/* Floating Toggle Button */
+.terminal-toggle-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 10000;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #0f172a 0%, #1a1f3a 100%);
+    border: 1.5px solid rgba(56, 189, 248, 0.25);
+    color: #38bdf8;
+    font-size: 1.15rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow:
+        0 6px 20px rgba(0, 0, 0, 0.35),
+        0 0 15px rgba(56, 189, 248, 0.08);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.terminal-toggle-btn:hover {
+    transform: scale(1.08) translateY(-3px);
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.4),
+        0 0 25px rgba(56, 189, 248, 0.15);
+    border-color: rgba(56, 189, 248, 0.5);
+    background: linear-gradient(135deg, #131b30 0%, #1e2545 100%);
+}
+
+.terminal-wrapper:hover {
+    box-shadow:
+        0 30px 70px -20px rgba(0, 0, 0, 0.6),
+        0 0 0 1px rgba(56, 189, 248, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+/* ---- Header ---- */
+.terminal-header {
+    background: linear-gradient(180deg, rgba(30, 41, 59, 0.95) 0%, rgba(20, 30, 48, 0.95) 100%);
+    padding: 0.8rem 1.1rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(56, 189, 248, 0.08);
+    position: relative;
+    height: 48px;
+    box-sizing: border-box;
+}
+
+.terminal-buttons {
+    display: flex;
+    gap: 8px;
+    position: absolute;
+    left: 1.1rem;
+}
+
+.term-btn {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    position: relative;
+}
+.term-btn::after {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+.term-btn:hover::after {
+    opacity: 1;
+}
+.term-btn.red {
+    background: #ff5f57;
+    box-shadow: 0 0 6px rgba(255, 95, 87, 0.25);
+}
+.term-btn.red:hover { background: #ff3b30; box-shadow: 0 0 10px rgba(255, 59, 48, 0.4); }
+.term-btn.red::after { background: rgba(255, 95, 87, 0.15); }
+
+.term-btn.yellow {
+    background: #febc2e;
+    box-shadow: 0 0 6px rgba(254, 188, 46, 0.2);
+}
+.term-btn.yellow:hover { background: #f5a623; box-shadow: 0 0 10px rgba(245, 166, 35, 0.35); }
+.term-btn.yellow::after { background: rgba(254, 188, 46, 0.12); }
+
+.term-btn.green {
+    background: #28c840;
+    box-shadow: 0 0 6px rgba(40, 200, 64, 0.2);
+}
+.term-btn.green:hover { background: #1db954; box-shadow: 0 0 10px rgba(29, 185, 84, 0.35); }
+.term-btn.green::after { background: rgba(40, 200, 64, 0.12); }
+
+.terminal-title {
+    margin: 0 auto;
+    color: #64748b;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+    user-select: none;
+    text-transform: lowercase;
+}
+
+/* ---- Body ---- */
+.terminal-body {
+    padding: 1.25rem 1.4rem;
+    color: #c8d6e5;
+    font-size: 0.88rem;
+    line-height: 1.7;
+    height: 360px;
+    overflow-y: auto;
+    background: linear-gradient(180deg, rgba(10, 15, 30, 0) 0%, rgba(10, 15, 30, 0.3) 100%);
+}
+
+/* Premium Scrollbar */
+.terminal-body::-webkit-scrollbar {
+    width: 5px;
+}
+.terminal-body::-webkit-scrollbar-track {
+    background: transparent;
+}
+.terminal-body::-webkit-scrollbar-thumb {
+    background: rgba(56, 189, 248, 0.15);
+    border-radius: 10px;
+    transition: background 0.2s;
+}
+.terminal-body::-webkit-scrollbar-thumb:hover {
+    background: rgba(56, 189, 248, 0.3);
+}
+
+@media (max-width: 600px) {
+    .terminal-wrapper {
+        right: 0.75rem;
+        bottom: 5rem;
+        max-width: calc(100vw - 1.5rem);
+        border-radius: 14px;
+    }
+    .terminal-toggle-btn {
+        right: 0.75rem;
+        bottom: 1rem;
+    }
+}
+
+.terminal-output {
+    margin-bottom: 0.4rem;
+}
+
+/* ---- Output Colors ---- */
+.term-success { color: #34d399; }
+.term-warning { color: #fbbf24; }
+.term-error   { color: #f87171; }
+.term-accent  { color: #38bdf8; }
+
+/* ---- Input Line ---- */
+.terminal-input-line {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    border-top: 1px solid rgba(56, 189, 248, 0.06);
+    background: rgba(15, 23, 42, 0.4);
+}
+
+.term-prompt {
+    color: #38bdf8;
+    font-weight: 700;
+    white-space: nowrap;
+    user-select: none;
+}
+
+.term-prompt span {
+    color: #a78bfa;
+}
+
+.terminal-input-line form {
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    display: flex;
+}
+
+.term-input {
+    background: transparent;
+    border: none;
+    color: #e2e8f0;
+    font-family: inherit;
+    font-size: inherit;
+    flex: 1;
+    outline: none;
+    min-width: 0;
+    caret-color: #38bdf8;
+}
+
+.term-input::placeholder {
+    color: #334155;
+}
+
+/* ==================== ENHANCED FEATURES ==================== */
+
+/* Command name in help */
+.cmd-name {
+    color: #67e8f9;
+    font-weight: 600;
+}
+
+.term-muted {
+    color: #475569;
+}
+
+/* Links */
+.term-link {
+    color: #38bdf8;
+    text-decoration: none;
+    border-bottom: 1px dashed rgba(56, 189, 248, 0.3);
+    transition: all 0.25s ease;
+}
+.term-link:hover {
+    color: #7dd3fc;
+    border-bottom-color: #7dd3fc;
+    text-shadow: 0 0 8px rgba(56, 189, 248, 0.2);
+}
+
+/* Interactive Menu */
+.term-menu-box {
+    padding: 0.4rem 0;
+}
+.term-menu-item {
+    display: inline-block;
+    width: 100%;
+    padding: 0.4rem 0.8rem;
+    margin: 0.15rem 0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    color: #c8d6e5;
+    border-left: 2px solid transparent;
+}
+.term-menu-item:hover {
+    background: rgba(56, 189, 248, 0.07);
+    color: #38bdf8;
+    padding-left: 1.3rem;
+    border-left-color: #38bdf8;
+}
+.term-menu-num {
+    color: #a78bfa;
+    font-weight: 700;
+    margin-right: 0.6rem;
+    font-size: 0.82rem;
+}
+
+/* ASCII Banner */
+.term-banner {
+    color: #38bdf8;
+    font-size: 0.5rem;
+    line-height: 1.15;
+    margin: 0;
+    letter-spacing: 0;
+    overflow-x: auto;
+    text-shadow: 0 0 12px rgba(56, 189, 248, 0.2);
+}
+
+/* Neofetch */
+.term-neofetch {
+    font-size: 0.78rem;
+    line-height: 1.5;
+    white-space: pre;
+}
+
+/* Matrix Canvas */
+.term-matrix-canvas {
+    border-radius: 8px;
+    margin: 0.5rem 0;
+    display: block;
+}
+
+/* Section highlight on goto */
+@keyframes term-section-glow {
+    0%   { box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.5); }
+    40%  { box-shadow: 0 0 40px 10px rgba(56, 189, 248, 0.12); }
+    100% { box-shadow: 0 0 0 0 rgba(56, 189, 248, 0); }
+}
+.term-highlight-section {
+    animation: term-section-glow 2.2s ease-out;
+}
+
+/* Minimize */
+.terminal-wrapper.term-minimized .terminal-body,
+.terminal-wrapper.term-minimized .terminal-input-line {
+    display: none;
+}
+.terminal-wrapper.term-minimized {
+    height: 48px;
+}
+
+/* Maximize */
+.terminal-wrapper.term-maximized {
+    max-width: 90vw;
+    width: 90vw;
+    bottom: 1rem;
+    right: 1rem;
+}
+.terminal-wrapper.term-maximized .terminal-body {
+    height: 60vh;
+}
+
+/* Smooth output animation */
+.terminal-output {
+    animation: termFadeIn 0.18s ease-out;
+}
+@keyframes termFadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to   { opacity: 1; transform: translateY(0); }
+}

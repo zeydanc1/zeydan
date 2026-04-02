@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -44,6 +44,7 @@
   <!-- CSS -->
   <link rel="stylesheet" href="css/galeri.css" />
   <link rel="stylesheet" href="css/premium-light.css" />
+  <link rel="stylesheet" href="css/terminal-marquee.css" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -195,6 +196,34 @@
 
   <script src="js/scroll-top.js"></script>
   <link rel="stylesheet" href="css/scroll-top.css">
+
+  <!-- INTERACTIVE TERMINAL -->
+  <script src="js/terminal.js"></script>
+  <div class="terminal-wrapper">
+    <div class="terminal-header" title="Minimize / Expand Terminal">
+      <div class="terminal-buttons">
+        <div class="term-btn red"></div>
+        <div class="term-btn yellow"></div>
+        <div class="term-btn green"></div>
+      </div>
+      <div class="terminal-title">guest@zeydan.dev:~</div>
+    </div>
+    <div class="terminal-body" id="term-history">
+      <div class="terminal-output">
+          Loading zeydanOS v2.0...<br>
+          Welcome to Zeydan's Interactive Terminal.<br>
+          Type <span class='term-accent'>help</span> to see available commands.
+      </div>
+      <br>
+    </div>
+    <div class="terminal-input-line" style="padding: 0 1.5rem 1.5rem 1.5rem;">
+        <span class="term-prompt">guest<span>@</span>zeydan.dev:~$</span>
+        <form id="term-form">
+            <input type="text" id="cmd-input" class="term-input" autocomplete="off" spellcheck="false">
+        </form>
+    </div>
+  </div>
+  <button id="term-toggle-btn" class="terminal-toggle-btn" title="Open Terminal">_&gt;</button>
 </body>
 
 </html>
