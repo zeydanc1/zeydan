@@ -6,7 +6,7 @@
     document.addEventListener('DOMContentLoaded', function () {
         // Elements to animate
         const targets = document.querySelectorAll(
-            'section, .sertifika-karti, .etkinlik-karti, .basari-listesi, #iletisim ul li, .social-contact-grid .social-btn'
+            'section, .sertifika-karti, .etkinlik-karti, .basari-listesi, #iletisim ul li, .social-contact-grid .social-btn, .scroll-animate'
         );
 
         targets.forEach(function (el, i) {
@@ -19,6 +19,8 @@
             entries.forEach(function (entry) {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('revealed');
+                    // Yeni modern elementler için
+                    entry.target.classList.add('is-visible');
                     observer.unobserve(entry.target); // only animate once
                 }
             });
