@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 – Sayfa Bulunamadı | Zeydan Çalışkan</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="stylesheet" href="css/bundled.css" />
+    <link rel="stylesheet" href="css/premium-light.css" />
+    <link rel="icon" href="images/zeydan.jpg" type="image/jpeg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <script src="js/theme.js"></script>
+    <style>
+        .notfound-wrapper {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            background: var(--color-bg-primary);
+        }
+
+        .notfound-code {
+            font-size: clamp(5rem, 20vw, 10rem);
+            font-weight: 900;
+            line-height: 1;
+            background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+            filter: drop-shadow(0 0 30px rgba(251, 191, 36, 0.3));
+        }
+
+        .notfound-title {
+            font-size: clamp(1.25rem, 4vw, 2rem);
+            font-weight: 700;
+            color: var(--color-text-primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .notfound-desc {
+            font-size: 1rem;
+            color: var(--color-text-secondary);
+            max-width: 420px;
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+        }
+
+        .notfound-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn-404-primary {
+            padding: 0.75rem 2rem;
+            background: linear-gradient(135deg, #fbbf24, #d97706);
+            color: #0f172a;
+            font-weight: 700;
+            font-size: 0.95rem;
+            border-radius: 9999px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(251, 191, 36, 0.25);
+        }
+
+        .btn-404-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(251, 191, 36, 0.4);
+        }
+
+        .btn-404-outline {
+            padding: 0.75rem 2rem;
+            background: transparent;
+            color: var(--color-primary);
+            font-weight: 600;
+            font-size: 0.95rem;
+            border-radius: 9999px;
+            text-decoration: none;
+            border: 1px solid rgba(251, 191, 36, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .btn-404-outline:hover {
+            background: rgba(251, 191, 36, 0.08);
+            border-color: var(--color-primary);
+            transform: translateY(-3px);
+        }
+
+        .notfound-emoji {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: float 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="notfound-wrapper">
+        <div class="notfound-emoji">🔭</div>
+        <div class="notfound-code">404</div>
+        <h1 class="notfound-title">Sayfa Bulunamadı</h1>
+        <p class="notfound-desc">
+            Aradığın sayfa taşınmış, silinmiş ya da hiç var olmamış olabilir.
+            Ana sayfaya dönerek devam edebilirsin.
+        </p>
+        <div class="notfound-actions">
+            <a href="index.html" class="btn-404-primary">← Ana Sayfaya Dön</a>
+            <a href="indexen.html" class="btn-404-outline">English Version</a>
+        </div>
+    </div>
+</body>
+
+</html>

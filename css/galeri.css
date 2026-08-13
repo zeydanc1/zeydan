@@ -1,0 +1,12 @@
+/**
+ * Galeri Page - Main Stylesheet
+ * Modüler CSS'ler bundled.css içine aktarıldığından güncellendi.
+ */
+
+/* ===== 1. Foundation & Components (Hepsi bundled.css içinde) ===== */
+@import url('bundled.css');
+
+/* ===== 2. External / Specific Components ===== */
+@import url('headermenu.css');
+@import url('dil.css');
+@import url('teknofest2025.css');
