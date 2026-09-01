@@ -327,6 +327,27 @@
 
 
 
+      <div class="modern-card">
+        <h3 class="card-title">Pi-hole Network & DNS Management</h3>
+        <p class="card-desc">Installation of a local DNS server architecture that improves network performance by blocking ads and trackers network-wide.</p>
+        <p class="card-desc" style="font-size: 0.85rem; margin-top: 0.5rem;"><strong>Challenge:</strong> DNS conflicts and certain devices rejecting manual DNS configurations.<br><strong>Solution:</strong> Routed the DHCP pool directly through the modem to the Pi-hole server, centralizing the traffic filtering for the entire network.</p>
+        <div class="card-tags"><span style="color: var(--app-secondary); border-color: var(--app-secondary);">Cyber Security</span><span>Network</span></div>
+      </div>
+
+      <div class="modern-card">
+        <h3 class="card-title">Portainer.io Container Management</h3>
+        <p class="card-desc">System architecture deployed to monitor and manage Docker environments and services via a centralized visual interface.</p>
+        <p class="card-desc" style="font-size: 0.85rem; margin-top: 0.5rem;"><strong>Challenge:</strong> Complex network configurations and data persistence (volume) issues when managing multiple containers via terminal.<br><strong>Solution:</strong> Integrated Portainer to isolate container networks (bridge) and visualize management processes through an intuitive UI.</p>
+        <div class="card-tags"><span style="color: var(--app-primary); border-color: var(--app-primary);">DevSecOps</span><span>Docker</span></div>
+      </div>
+
+      <div class="modern-card">
+        <h3 class="card-title">Uptime Kuma Service Monitoring</h3>
+        <p class="card-desc">Proactive monitoring tool deployed to track the uninterrupted operation of network services and system components.</p>
+        <p class="card-desc" style="font-size: 0.85rem; margin-top: 0.5rem;"><strong>Challenge:</strong> Delayed awareness and response times during sudden crashes of critical services.<br><strong>Solution:</strong> Deployed Uptime Kuma with HTTP, Ping, and TCP port listeners, integrated with a Telegram bot API for instant downtime notifications.</p>
+        <div class="card-tags"><span style="color: var(--app-secondary); border-color: var(--app-secondary);">System Architecture</span><span>Monitoring</span></div>
+      </div>
+
     </div>
   </section>
 
@@ -408,6 +429,33 @@
         <h3 class="card-title">Visual Programming</h3>
         <p class="card-desc">Designing form-based desktop applications within the Visual Studio environment using C# or similar languages.</p>
         <div class="card-tags"><span style="color: var(--app-primary); border-color: var(--app-primary);">Software Dev</span><span>.NET</span></div>
+      </div>
+
+      <div class="modern-card">
+        <div style="border-radius: 6px; overflow: hidden; margin-bottom: 1.5rem; border: 1px solid var(--app-border);">
+          <img src="images/pi-hole.jpeg" class="zoomable-img" alt="Pi-hole Network Management" style="width: 100%; display: block; object-fit: cover; aspect-ratio: 16/9;">
+        </div>
+        <h3 class="card-title">Pi-hole Network & DNS Management</h3>
+        <p class="card-desc">Installation of a local DNS server architecture and filtering system that improves network performance by blocking ads and trackers network-wide.</p>
+        <div class="card-tags"><span style="color: var(--app-secondary); border-color: var(--app-secondary);">Cyber Security</span><span>Network</span></div>
+      </div>
+
+      <div class="modern-card">
+        <div style="border-radius: 6px; overflow: hidden; margin-bottom: 1.5rem; border: 1px solid var(--app-border);">
+          <img src="images/portainer.io.jpeg" class="zoomable-img" alt="Portainer.io Container Management" style="width: 100%; display: block; object-fit: cover; aspect-ratio: 16/9;">
+        </div>
+        <h3 class="card-title">Portainer.io Container Management</h3>
+        <p class="card-desc">System architecture deployed to monitor and manage Docker environments, network components, and services via a centralized visual interface.</p>
+        <div class="card-tags"><span style="color: var(--app-primary); border-color: var(--app-primary);">DevSecOps</span><span>Docker</span></div>
+      </div>
+
+      <div class="modern-card">
+        <div style="border-radius: 6px; overflow: hidden; margin-bottom: 1.5rem; border: 1px solid var(--app-border);">
+          <img src="images/uptime-kuma.jpeg" class="zoomable-img" alt="Uptime Kuma Service Monitoring" style="width: 100%; display: block; object-fit: cover; aspect-ratio: 16/9;">
+        </div>
+        <h3 class="card-title">Uptime Kuma Service Monitoring</h3>
+        <p class="card-desc">Proactive monitoring tool deployed to track the uninterrupted operation (uptime) of network services, websites, and system components.</p>
+        <div class="card-tags"><span style="color: var(--app-secondary); border-color: var(--app-secondary);">System Architecture</span><span>Monitoring</span></div>
       </div>
 
     </div>
