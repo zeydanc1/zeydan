@@ -340,6 +340,27 @@
 
 
 
+      <div class="modern-card">
+        <h3 class="card-title">Pi-hole Ağ & DNS Yönetimi</h3>
+        <p class="card-desc">Tüm ağ genelinde reklam ve izleyicileri engelleyerek ağ performansını artıran yerel DNS sunucu kurulumu.</p>
+        <p class="card-desc" style="font-size: 0.85rem; margin-top: 0.5rem;"><strong>Karşılaşılan Sorun:</strong> DNS çakışmaları ve bazı cihazların manuel DNS ayarlarını kabul etmemesi.<br><strong>Çözüm:</strong> Modem üzerinden DHCP havuzunun Pi-hole sunucusuna yönlendirilmesi ile tüm ağ trafiği merkezi olarak filtrelendi.</p>
+        <div class="card-tags"><span style="color: var(--app-secondary); border-color: var(--app-secondary);">Siber Güvenlik</span><span>Ağ Yönetimi</span></div>
+      </div>
+
+      <div class="modern-card">
+        <h3 class="card-title">Portainer.io Konteyner Yönetimi</h3>
+        <p class="card-desc">Docker ortamlarını ve servisleri merkezi, görsel bir arayüz üzerinden izlemek ve yönetmek için kurulan mimari.</p>
+        <p class="card-desc" style="font-size: 0.85rem; margin-top: 0.5rem;"><strong>Karşılaşılan Sorun:</strong> Çoklu konteyner yönetiminde terminal üzerinden karmaşık ağ yapılandırmaları ve veri kalıcılığı (volume) sorunları.<br><strong>Çözüm:</strong> Portainer entegrasyonu ile konteyner ağları (bridge) izole edildi ve yönetim arayüzü sayesinde süreçler görselleştirildi.</p>
+        <div class="card-tags"><span style="color: var(--app-primary); border-color: var(--app-primary);">DevSecOps</span><span>Docker</span></div>
+      </div>
+
+      <div class="modern-card">
+        <h3 class="card-title">Uptime Kuma Servis İzleme</h3>
+        <p class="card-desc">Ağ servislerinin ve sistem bileşenlerinin kesintisiz çalışmasını takip eden proaktif izleme aracı.</p>
+        <p class="card-desc" style="font-size: 0.85rem; margin-top: 0.5rem;"><strong>Karşılaşılan Sorun:</strong> Kritik servislerin anlık çökme durumlarında geç haberdar olunması ve müdahale gecikmesi.<br><strong>Çözüm:</strong> Uptime Kuma kurularak HTTP, Ping ve TCP port dinleyicileri ayarlandı; anlık durum değişimleri Telegram bot API ile bildirim olarak bağlandı.</p>
+        <div class="card-tags"><span style="color: var(--app-secondary); border-color: var(--app-secondary);">Sistem Mimarisi</span><span>Sunucu İzleme</span></div>
+      </div>
+
     </div>
   </section>
 
@@ -421,6 +442,33 @@
         <h3 class="card-title">Görsel Programlama</h3>
         <p class="card-desc">Visual Studio ortamında C# veya benzeri diller kullanılarak geliştirilen masaüstü yazılım süreçleri.</p>
         <div class="card-tags"><span style="color: var(--app-primary); border-color: var(--app-primary);">Yazılım Dev</span><span>.NET</span></div>
+      </div>
+
+      <div class="modern-card">
+        <div style="border-radius: 6px; overflow: hidden; margin-bottom: 1.5rem; border: 1px solid var(--app-border);">
+          <img src="images/pi-hole.jpeg" class="zoomable-img" alt="Pi-hole Ağ Yönetimi" style="width: 100%; display: block; object-fit: cover; aspect-ratio: 16/9;">
+        </div>
+        <h3 class="card-title">Pi-hole Ağ & DNS Yönetimi</h3>
+        <p class="card-desc">Tüm ağ genelinde reklam ve izleyicileri engelleyerek ağ performansını artıran yerel DNS sunucu mimarisi ve filtreleme sistemi kurulumu.</p>
+        <div class="card-tags"><span style="color: var(--app-secondary); border-color: var(--app-secondary);">Siber Güvenlik</span><span>Ağ Yönetimi</span></div>
+      </div>
+
+      <div class="modern-card">
+        <div style="border-radius: 6px; overflow: hidden; margin-bottom: 1.5rem; border: 1px solid var(--app-border);">
+          <img src="images/portainer.io.jpeg" class="zoomable-img" alt="Portainer.io Konteyner Yönetimi" style="width: 100%; display: block; object-fit: cover; aspect-ratio: 16/9;">
+        </div>
+        <h3 class="card-title">Portainer.io Konteyner Yönetimi</h3>
+        <p class="card-desc">Docker ortamlarını, ağ bileşenlerini ve servisleri merkezi, görsel bir arayüz üzerinden izlemek ve yönetmek için kurulan sistem mimarisi.</p>
+        <div class="card-tags"><span style="color: var(--app-primary); border-color: var(--app-primary);">DevSecOps</span><span>Docker</span></div>
+      </div>
+
+      <div class="modern-card">
+        <div style="border-radius: 6px; overflow: hidden; margin-bottom: 1.5rem; border: 1px solid var(--app-border);">
+          <img src="images/uptime-kuma.jpeg" class="zoomable-img" alt="Uptime Kuma Servis İzleme" style="width: 100%; display: block; object-fit: cover; aspect-ratio: 16/9;">
+        </div>
+        <h3 class="card-title">Uptime Kuma Servis İzleme</h3>
+        <p class="card-desc">Ağ servislerinin, web sitelerinin ve sistem bileşenlerinin kesintisiz çalışmasını (uptime) takip etmek için kurulan proaktif izleme aracı.</p>
+        <div class="card-tags"><span style="color: var(--app-secondary); border-color: var(--app-secondary);">Sistem Mimarisi</span><span>Sunucu İzleme</span></div>
       </div>
 
     </div>
